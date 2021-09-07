@@ -33,5 +33,5 @@ app.listen(PORT, ()=>{
 //Postman check
 //URL = http://localhost:8070/assessment/
 
-/*const AssessmentRouter = require("./routes/Assessment.js");
-app.use("/Assessment",AssessmentRouter);*/
+const AssessmentRouter = require("./routes/Assessment.js");
+app.use("/Assessment",AssessmentRouter);

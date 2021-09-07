@@ -1,0 +1,13 @@
+Run these comments before run the app
+
+/
+npm install
+npm install mongoose@~5.13.8 (If you got error while running, run this comment)
+npm install nodemon
+/
+
+"cors": "^2.8.5",
+"dotenv": "^10.0.0",
+"express": "^4.17.1",
+"mongoose": "^5.13.8",
+"nodemon": "^2.0.12"
