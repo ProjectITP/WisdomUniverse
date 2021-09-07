@@ -29,5 +29,9 @@ app.listen(PORT, ()=>{
     console.log('Server is up and running on port number: ',PORT)
 })
 
+
+//Postman check
+//URL = http://localhost:8070/assessment/
+
 /*const AssessmentRouter = require("./routes/Assessment.js");
 app.use("/Assessment",AssessmentRouter);*/
