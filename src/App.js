@@ -11,7 +11,7 @@ function App() {
       
       {/* <Route path="/" exact component={CounterClass} /> */}
     
-      <Route path="" exact component={ViewQuiz}/>
+      <Route path="/" exact component={ViewQuiz}/>
     </div>
     
     </Router>
