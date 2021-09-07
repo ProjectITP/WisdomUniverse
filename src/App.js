@@ -1,13 +1,20 @@
 import './App.css';
+import ViewQuiz from './components/Quiz';
 import Header from './shared/Header';
+import {BrowserRouter as Router, Route} from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+    <div>
       <Header/>
-      <h2>Frontend</h2>
       
+      {/* <Route path="/" exact component={CounterClass} /> */}
+    
+      <Route path="" exact component={ViewQuiz}/>
     </div>
+    
+    </Router>
   );
 }
 
