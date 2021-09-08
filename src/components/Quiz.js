@@ -16,7 +16,7 @@ export default function ViewQuestion(){
 
     return(
         <div className="container">
-            <h2>View Quiz</h2>
+            <h3>View Quiz</h3>
 
             <div>
                 {Quiz.map(Quiz=>(

@@ -31,7 +31,11 @@ function Header(){
                     Assessments
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/aadd">Quiz</a>
+                        <a class="dropdown-item" href="">Quiz</a>
+                        <a class="dropdown-item" href="/aadd">Add Quiz</a>
+                        <a class="dropdown-item" href="">View Quiz</a>
+                        
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Assignment</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
