@@ -32,9 +32,9 @@ function Header(){
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="">Quiz</a>
-                        <a class="dropdown-item" href="/aadd">Add Quiz</a>
-                        <a class="dropdown-item" href="">View Quiz</a>
-                        
+                        <a class="dropdown-item" href="/i/quiz">View Quiz(I)</a>
+                        <a class="dropdown-item" href="">Add Quiz</a>
+                        <a class="dropdown-item" href="/i/quiz">View Quiz(S)</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Assignment</a>
                         <div class="dropdown-divider"></div>

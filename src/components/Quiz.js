@@ -3,7 +3,9 @@ import axios from "axios"
 
 
 export default function ViewQuestion(){
+    
     const [Quiz, setQuiz]=useState([]);
+
     function getQuiz(){
         axios.get("http://localhost:8070/assessment/").then((res)=>{
             console.log(res.data);
