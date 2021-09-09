@@ -35,3 +35,7 @@ app.listen(PORT, ()=>{
 
 const AssessmentRouter = require("./routes/Assessment.js");
 app.use("/Assessment",AssessmentRouter);
+
+//URL = http://localhost:8070/quiz/
+const QuizRouter = require("./routes/Quiz.js");
+app.use("/quiz",QuizRouter);
