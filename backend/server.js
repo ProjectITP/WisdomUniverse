@@ -39,3 +39,11 @@ app.use("/Assessment",AssessmentRouter);
 //URL = http://localhost:8070/quiz/
 const QuizRouter = require("./routes/Quiz.js");
 app.use("/quiz",QuizRouter);
+
+//URL = http://localhost:8070/instructor/
+const instructorRoutes = require('./routes/instructors');
+app.use(instructorRoutes);
+
+//URL = http://localhost:8070/lecturer/
+const lecturerRoutes = require('./routes/lecturers');
+app.use(lecturerRoutes);
