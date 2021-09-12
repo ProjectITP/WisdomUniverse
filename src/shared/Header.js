@@ -41,7 +41,7 @@ function Header(){
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><hr class="dropdown-divider"/></li>
                                 <li><a class="dropdown-item" href="#">Assignment</a></li>
-                                <li class="dropdown-item">Assignment</li>
+                                <li><a class="dropdown-item" href="/i/assignment">View Assignments(I)</a></li>
                                 <li><a class="dropdown-item" href="#">Assignment</a></li>
                             </ul>
                         </li>
