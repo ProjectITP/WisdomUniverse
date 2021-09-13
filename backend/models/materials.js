@@ -3,19 +3,19 @@ const mongoose = require('mongoose');
 const materialSchema = new mongoose.Schema({
     subjectName:{
         type:String,
-        required:false
+        required:true
     },
-    curriculum:{
+    /*curriculum:{
         type:String,
         required:false
     },
     timeTable:{
         type:String,
         required:false
-    },
+    },*/
     topic:{
         type:String,
-        required:false
+        required:true
     },
     notes:{
         type:String,

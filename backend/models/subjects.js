@@ -12,11 +12,7 @@ const subjectSchema = new mongoose.Schema({
     contNumber:{
         type:String,
         required:true
-    },
-    email:{
-        type:String,
-        required:false
-    },
+    },    
     startDate:{
         type:Date,
         required:true

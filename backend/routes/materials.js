@@ -24,24 +24,8 @@ router.post('/material/save',(req,res) =>{
 });
 
 
-//get materials
-/*
-router.get('/materials',(req,res) =>{
-    Materials.find().exec((err,materials) =>{
-        if(err){
-            return res.status(400).json({
-                error:err
-            });
-        }
-        return res.status(200).json({
-            success:true,
-            existingMaterials:materials
-        });
-    });
-});*/
-
 //get materials related to a subject
-
+//URL = http://localhost:8070/materials?subjectName=Physics
 router.get('/materials',(req,res) =>{
 const subjectName = req.query.subjectName;
     
@@ -59,48 +43,8 @@ const subjectName = req.query.subjectName;
 });
 
 /*
-router.get('/materials',(req,res) =>{
-    Materials.find({"subjectName":"Physics"}).exec((err,materials) =>{
-        if(err){
-            return res.status(400).json({
-                error:err
-            });
-        }
-        return res.status(200).json({
-            success:true,
-            existingMaterials:materials
-        });
-    });
-});*/
-
-/*
-
-router.get('/materials',(request,response) =>{
-    const info = request.body;
-    const subjectName = info.saname;
-    Materials.find({"subjectName":"Physics"},(error,data) =>{
-        if(error){
-            console.log(error);
-        }else{
-            response.json(data);
-        }
-    })
-})
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
 //get a specific material
+
 router.get("/material/:id",(req,res) =>{
 
     let materialId = req.params.id;
@@ -115,7 +59,7 @@ router.get("/material/:id",(req,res) =>{
         });
     });
 });
-
+*/
 
 //update material
 
