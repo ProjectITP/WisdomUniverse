@@ -2,10 +2,9 @@ Run these comments before run the app
 
 /
 npm install
+npm install nodemon
 npm install mongoose@~5.13.8 (If you got error while running, run this comment)
 npm install mongoose-date-format (If you got error while running, run this comment)
-npm install nodemon
-npm install mongoose-date-format
 /
 
 "cors": "^2.8.5",
