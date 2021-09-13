@@ -75,9 +75,6 @@ const studentCtrl = {
         activation_token,
         process.env.ACTIVATION_TOKEN_SECRET
       );
-
-      console.log(student);
-
       const {
         firstName,
         lastName,
@@ -145,7 +142,6 @@ const studentCtrl = {
 
         const access_token = createAccessToken({ id: student.id });
         res.json({ access_token });
-        console.log(student);
       });
     } catch (err) {
       return res.status(500).json({ msg: err.message });
@@ -170,7 +166,6 @@ const studentCtrl = {
   resetPassword: async (req, res) => {
     try {
       const { password } = req.body;
-      console.log(password);
       const passwordHash = await bcrypt.hash(password, 12);
 
       await Students.findOneAndUpdate(
