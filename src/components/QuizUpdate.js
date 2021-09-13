@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import DateRangePicker from 'react-bootstrap-daterangepicker';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
