@@ -46,3 +46,12 @@ app.use(instructorRoutes);
 //URL = http://localhost:8070/lecturer/
 const lecturerRoutes = require('./routes/lecturers');
 app.use(lecturerRoutes);
+
+
+//URL = http://localhost:8070/file/
+const fileRoute = require('./routes/file');
+app.use(fileRoute);
+
+//URL = http://localhost:8070/newsLetter/
+const newsletterRoute = require('./routes/newsLetter');
+app.use(newsletterRoute);

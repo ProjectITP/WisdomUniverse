@@ -14,7 +14,11 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.8",
+<<<<<<< HEAD
     "mongoose-date-format": "^1.2.0",
+=======
+    "multer": "^1.4.3",
+>>>>>>> aadb890df0ae34ef95da03b048595152701093c7
     "nodemon": "^2.0.12"
   }
 }
