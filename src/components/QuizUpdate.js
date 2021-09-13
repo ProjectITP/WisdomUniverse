@@ -108,6 +108,7 @@ export default class QuizUpdate extends Component {
                             <label for="exampleInputEmail1" className="form-label">Quiz Availability</label>
                             <DatePicker id="example-datepicker" name="FromDate" startDate="FromDate" value={this.state.Fro} onChange={(date)=>this.handleInputChange(date, 'FromDate')} />
                                 <input type="date" className="form-control date" id="datepicker" placeholder="From date" name="FromDate" value={this.state.FromDate}  onChange={this.handleInputChange} required={true}/>
+                                
                             <div id="emailHelp" className="form-text">From date (Unhide the quiz)</div>
                     </div>
                     
