@@ -25,7 +25,7 @@ function App() {
     
       <Route path="/i/quiz" exact component={ViewQuiz}/>
 
-      <Route path="/" exact component={AllInstructor}/>
+      <Route path="/instructor" exact component={AllInstructor}/>
           <Route path="/edit/:id" exact component={EditInstructor}/>
           <Route path="/instructor/:id" exact component={InstructorDetails}/>
           <Route path="/reportgenerate" exact component={GenerateReport}/>
