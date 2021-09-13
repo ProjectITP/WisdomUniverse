@@ -1,0 +1,40 @@
+.deleteBtn {
+  padding: 5px 10px;
+  margin: 5px 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-decoration: none;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+.deleteBtn {
+  background: rgb(212, 45, 45) !important;
+  color: #fff;
+}
+
+.table-sm thead tr th {
+  padding: 10px 15px !important;
+  text-transform: uppercase;
+  background: #edf5f1;
+  font-size: 15px;
+  color: #198754;
+}
+.table-sm tbody tr td {
+  padding: 2px 15px !important;
+  font-size: 14px;
+  color: #444;
+}
+
+.table#adminProfile {
+  margin-bottom: 0;
+  border-radius: 10px;
+}
+
+.table-wrap {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid #e7e7e7;
+}

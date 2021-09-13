@@ -1,0 +1,58 @@
+.loginForm {
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #e7e7e7;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.inline-link {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.form-group {
+  margin: 0;
+  padding: 5px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #7b7b7b;
+  margin-bottom: 5px;
+}
+
+#genderLabel {
+  margin-right: 10px;
+}
+
+.form-wrap {
+  padding: 20px;
+  background: #f8f8f8;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-wrap h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.form-control {
+  background: #edf5f1;
+  border: 1px solid #c2ded1;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #7b7b7b;
+}
