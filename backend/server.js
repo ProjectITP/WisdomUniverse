@@ -31,10 +31,9 @@ app.listen(PORT, ()=>{
 
 
 //Postman check
-//URL = http://localhost:8070/assessment/
-
-const AssessmentRouter = require("./routes/Assessment.js");
-app.use("/Assessment",AssessmentRouter);
+//URL = http://localhost:8070/assignment/
+const AssignmentRouter = require("./routes/Assignment.js");
+app.use("/Assignment",AssignmentRouter);
 
 //URL = http://localhost:8070/quiz/
 const QuizRouter = require("./routes/Quiz.js");
