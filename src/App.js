@@ -14,6 +14,19 @@ import ViewAssignment from './components/AssignmentView'
 import AssignmentAdd from './components/AssignmentAdd';
 
 
+
+//resources
+import Upload from './components/Upload';
+import AllResources from './components/AllResources';
+import Resources from './components/Resources';
+import PastpaperUpload from './components/PastpaperUpload';
+
+
+
+
+
+
+
 import Header from './shared/Header';
 import Footer from './shared/Footer';
 
@@ -42,6 +55,15 @@ function App() {
           <Route path="/i/assignment" exact component={ViewAssignment}/>
           <Route path="/i/assignmentadd" exact component={AssignmentAdd}/>
 
+
+          <Route component={Upload} path="/add" exact={true} />
+          <Route component={AllResources} path="/list" />
+          <Route component={Resources} path="/student" />
+          <Route component={PastpaperUpload} path="/paper" />
+
+
+
+      
       
     </div>
     <Footer/>

@@ -36,8 +36,19 @@ function Header(){
                         <li class="nav-item">
                             <a class="nav-link" href="">Notices</a> 
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Resources</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Resources
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/student">Resource Student</a></li>
+                                <li><a class="dropdown-item" href="/list">Resources Admin</a></li>
+                                <li><a class="dropdown-item" href="/add">Add Resource</a></li>
+                                <li><a class="dropdown-item" href="/paper">Add Pastpapers</a></li>
+                                <li><a class="dropdown-item" href="/list">Send NewsLetter</a></li>
+                                <li><a class="dropdown-item" href="/list">Reports</a></li>
+                               
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Subject</a>

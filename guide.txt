@@ -4,4 +4,7 @@ Run these comments before run the app
 npm install
 npm install axios
 npm install react-router-dom
+
+
+npm i  bootstrap@4.5.2  react-bootstrap@1.3.0  (if you get any errors while running the app)
 /
