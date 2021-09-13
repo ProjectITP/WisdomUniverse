@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 
 // you will need the css that comes with bootstrap@3. if you are using
 // a tool like webpack, you can do the following:
@@ -105,7 +103,6 @@ export default class QuizUpdate extends Component {
                 <div className="row g-3">
                     <div className="col-sm-3" id="datetimepicker1">
                             <label for="exampleInputEmail1" className="form-label">Quiz Availability</label>
-                            <DatePicker id="example-datepicker" name="FromDate" startDate="FromDate" value={this.state.Fro} onChange={(date)=>this.handleInputChange(date, 'FromDate')} />
                                 <input type="date" className="form-control date" id="datepicker" placeholder="From date" name="FromDate" value={this.state.FromDate}  onChange={this.handleInputChange} required={true}/>
                                 
                             <div id="emailHelp" className="form-text">From date (Unhide the quiz)</div>
