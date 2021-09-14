@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../styles.css';
 
 export default class ViewSubjectInstructor extends Component {
 constructor(props){
@@ -83,7 +84,7 @@ handleSearchArea= (e) =>{
            <input
              className="form-control"
              type="search"
-             placeholder="subjectName/instructorName"
+             placeholder="Subject / Instructor"
              name="searchQuery"
              onChange={this.handleSearchArea}>               
              </input>
@@ -106,7 +107,7 @@ handleSearchArea= (e) =>{
                     <tr key={index}>
                       <th scope="row">{index+1}</th>
                       <td className="fw-bolder">
-                        <a href={`/subject/${subjects._id}`} style={{textDecoration:'none',color:'#1e6fa0',fontFamily:'Lucida Sans,sans-serif'}}>
+                        <a href={`/subjectDetails/${subjects._id}`} style={{textDecoration:'none',color:'#1e6fa0',fontFamily:'Lucida Sans,sans-serif'}}>
                         {subjects.subjectName}
                         </a>
                         </td>
@@ -114,7 +115,7 @@ handleSearchArea= (e) =>{
                       <td>{subjects.contNumber}</td>
                       <td>{subjects.startDate}</td>
                       <td>                      
-                      <a className="btn btn-success" href={`/viewMaterialInstructor/${subjects._id}`}>
+                      <a className="btn btn-success" href={`/viewMaterialsInstructor/${subjects._id}`}>
                           <i className="fas fa-angle-double-right"></i> &nbsp; View
                         </a>
                         &nbsp;&nbsp;&nbsp;

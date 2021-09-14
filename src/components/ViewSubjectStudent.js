@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../styles.css';
 
 export default class ViewSubjectStudent extends Component {
 constructor(props){
@@ -66,7 +67,7 @@ handleSearchArea= (e) =>{
            <input
              className="form-control"
              type="search"
-             placeholder="subjectName/instructorName"
+             placeholder="Subject / Instructor"
              name="searchQuery"
              onChange={this.handleSearchArea}>               
              </input>
