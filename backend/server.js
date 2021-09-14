@@ -48,6 +48,7 @@ app.use(instructorRoutes);
 const lecturerRoutes = require('./routes/lecturers');
 app.use(lecturerRoutes);
 
+
 //payment
 //http://localhost:8070/file/
 const file=require('./routes/StudentPayments');
@@ -62,3 +63,28 @@ app.use(enrollRoutes);
 //http://localhost:8070/enrollKey
 const enrollKeyRoutes = require(`./routes/EnrollKeys`);
 app.use(enrollKeyRoutes);
+
+
+//URL = http://localhost:8070/contactus/
+const contactusRouter = require("./routes/contactuss.js");
+app.use("/contactus",contactusRouter);
+
+//URL = http://localhost:8070/notice/
+const noticeRouter = require("./routes/notices.js");
+app.use("/notice",noticeRouter);
+
+
+//URL = http://localhost:8070/feedback/
+const feedbackRouter = require("./routes/feedbacks.js");
+app.use("/feedback",feedbackRouter);
+
+
+//URL = http://localhost:8070/subject/
+const subjectRoutes = require('./routes/subjects');
+app.use(subjectRoutes);
+
+//URL = http://localhost:8070/material/
+const materialRoutes = require('./routes/materials');
+app.use(materialRoutes);
+
+

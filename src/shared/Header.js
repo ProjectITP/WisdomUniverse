@@ -13,34 +13,57 @@ function Header(){
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                        <a class="nav-link active" href="/">Home</a>
+                        <a class="nav-link active" href="">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">Students</a>
                         </li>
+
+
+                       
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Instructor
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="">Instructor</a></li>
-                                <li><a class="dropdown-item" href="/">All Instructors</a></li>
+                                <li><a class="dropdown-item" href="/instructor">All Instructors</a></li>
                                 <li><a class="dropdown-item" href="/request">All Requests</a></li>
                                 <li><a class="dropdown-item" href="/register">Sign-up</a></li>
-                                <li><a class="dropdown-item" href="#">Update Instructor</a></li>
-                                <li><a class="dropdown-item" href="#">Add Instructor</a></li>
                                 <li><a class="dropdown-item" href="/reportgenerate">Report Generate</a></li>
                                                                 
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Notices</a> 
-                        </li>
+
+
+
+                        <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Notices 
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="/feedview">Notices</a></li>
+                                        <li><a class="dropdown-item" href="/feedAdminview">Admin Notices</a></li>
+                                        <li><a class="dropdown-item" href="/feedadd"> Notices add</a></li>
+                                       
+                                      
+                                    </ul>
+                                    </li>
+                      
                         <li class="nav-item">
                             <a class="nav-link" href="#">Resources</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Subject</a>
+                        <li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Subject
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/ViewSubjectStudent">View Subjects(Student)</a></li>
+                                <li><a class="dropdown-item" href="/ViewSubjectInstructor">View Subjects(Instructor)</a></li>
+                                <li><a class="dropdown-item" href="/ViewMaterialsStudent">View Materials(Student)</a></li>
+                                <li><a class="dropdown-item" href="/ViewMaterialsInstructor">View Materials(Instructor)</a></li>
+                                
+                            </ul>    
                         </li>
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -78,6 +101,20 @@ function Header(){
                             </ul>
                         </li>
                         
+
+                        <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        FeedBack
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="/fbadd">Feedback form</a></li>
+                                        
+                                        <li><hr class="dropdown-divider"/></li>
+                                        <li><a class="dropdown-item" href="/fbview">Feedback View </a></li>
+                                        <li><a class="dropdown-item" href="/view">Contactus View</a></li>
+                                    </ul>
+                                    </li>
+
                     </ul>
                 </div>
             </div>
