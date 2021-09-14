@@ -45,6 +45,23 @@ function Header(){
                                 <li><a class="dropdown-item" href="#">Assignment</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <Link class="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Results
+                            </Link>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><Link class="dropdown-item" to="">Quiz Results</Link></li>
+                                <li><Link class="dropdown-item" to="/i/viewresults">View Results(I)</Link></li>
+                                <li><Link class="dropdown-item" to="/s/viewresults">View Results(S)</Link></li>
+                                <li><Link class="dropdown-item" to="/i/quiz">Add Results(I)</Link></li>
+                                <li><Link class="dropdown-item" to="/i/quiz">Update Results(I)</Link></li>
+                                <li><Link class="dropdown-item" to="#">Another action</Link></li>
+                                <li><hr class="dropdown-divider"/></li>
+                                <li><Link class="dropdown-item" to="#">Assignment</Link></li>
+                                <li><Link class="dropdown-item" to="/i/assignment">View Submissions(I)</Link></li>
+                                <li><Link class="dropdown-item" to="#">Assignment</Link></li>
+                            </ul>
+                        </li>
                         
                     </ul>
                 </div>

@@ -47,3 +47,18 @@ app.use(instructorRoutes);
 //URL = http://localhost:8070/lecturer/
 const lecturerRoutes = require('./routes/lecturers');
 app.use(lecturerRoutes);
+
+//URL = http://localhost:8070/attemptsquiz/
+
+const Attempts_QuizRouter = require("./routes/Attempts_Quiz.js");
+app.use("/attemptsquiz",Attempts_QuizRouter);
+
+//URL = http://localhost:8070/attemptsass/
+
+const Attempts_AssRouter = require("./routes/Attempts_Ass.js");
+app.use("/attemptsass",Attempts_AssRouter);
+
+//URL = http://localhost:8070/assignment/
+
+const Assignment = require("./routes/Assignment.js");
+app.use("/assignment",Assignment);
