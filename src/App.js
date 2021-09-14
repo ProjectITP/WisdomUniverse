@@ -1,5 +1,14 @@
 import './App.css';
 
+
+import ViewQuiz from './components/Quiz';
+
+import ViewResults from './components/ViewResults';
+import ViewQuizResults from './components/ViewQuizResults';
+import UpdateQuizResults from './components/UpdateQuizResults';
+
+
+
 import AllInstructor from './components/AllInstructor';
 import EditInstructor from './components/EditInstructor';
 import InstructorDetails from './components/InstructorDetails';
@@ -43,10 +52,6 @@ import NoticeUpload from './components/NoticeUpload';
 import AdminContactView from './components/AdminContactView';
 import NoticeUpdate from './components/NoticeUpdate';
 import InsertContactus from './components/InsertContactus';
-
-
-
-
 
 
 import Header from './shared/Header';
@@ -116,11 +121,21 @@ function App() {
          <Route path="/feedupdate/:id" exact component={NoticeUpdate} />
 
       
-
+          <Route path="/i/viewresults" exact component={ViewResults}/>
+          <Route path="/i/viewquizresults/:id" exact component={ViewQuizResults}/>
+          <Route path="/i/updateresults/:id" exact component={UpdateQuizResults}/>
 
 
     </div>
+
+  
+
+
+
+           
+
     <Footer/>
+
     </Router>
   );
 }
