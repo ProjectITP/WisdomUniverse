@@ -19,19 +19,14 @@ export default function ViewAssignment() {
 
     return(
         <div className="container">
-            <h2>Assignmentzes</h2>
+            <h2>Assignments</h2>
             <br/><br/>
             <div>
-                
                 {Assignment.map((Assignment)=>(
                     <ul>
                         <h5><Link to={`/i/assignmentupdate/${Assignment._id}`} style={{textDecoration:'none'}}>{Assignment.name}</Link></h5>
-                        
                     </ul>
-                    
                 ))}
-                
-                
             </div>
             <br/>
             <div class="d-grid gap-2 col-6 mx-auto">
@@ -39,8 +34,5 @@ export default function ViewAssignment() {
             </div>            
             
         </div>
-        
-       
-      
     )
 }
