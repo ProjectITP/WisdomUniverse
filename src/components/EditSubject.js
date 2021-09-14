@@ -91,7 +91,7 @@ export default class EditSubject extends Component {
             <div class="container">
                 <div class="container"><h3 style={{marginTop:'15px'}}>Edit Subject Profile</h3></div>
                 <div class="container-fluid testbox">
-                    <form className="needs-validation" style={{position:'static' }} noValidate>
+                    <form className="forms needs-validation" style={{position:'static' }} noValidate>
                         <div className="form-group item" style={{marginBottom:'15px'}}>
                             <p style={{marginBottom:'5px'}} >SubjectName<span class="required">*</span></p>
                             <input type="text" className="position-item" name="subjectName" placeholder="Enter subjectName"
@@ -146,11 +146,11 @@ export default class EditSubject extends Component {
                         value={this.state.aboutClass} onChange={this.handleInputChange}/>
                 </div>
 
-                <div className="form-group item" style={{marginBottom:'15px'}}>
+                {/*<div className="form-group item" style={{marginBottom:'15px'}}>
                     <p>Advertisement:</p>
                     <input type="text" name="providing"/>
                     <input type="file" name="file" accept="file/*"/>
-                </div>
+                </div>*/}
 
                         <button className="button" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
                             <i className="far fa-check-square"></i> &nbsp;Update

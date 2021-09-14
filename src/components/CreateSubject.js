@@ -104,7 +104,7 @@ export default class CreateSubject extends Component {
         <h4 style={{textAlign:'center'}}>Subject Profile</h4>
         <div class="container-fluid testbox">
             
-            <form className="needs-validation" style={{position:'static'}} novalidate>
+            <form className="forms needs-validation" style={{position:'static'}} novalidate>
             <div className="form-group item" style={{marginBottom:'15px'}}>
                     <p style={{marginBottom:'5px'}} >Subject Name:<span class="required">*</span></p>
                     <input type="text" className="position-item" name="subjectName" placeholder="Enter subject Name"
