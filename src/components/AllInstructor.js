@@ -125,17 +125,12 @@ render() {
             ))}
           </tbody>
         </table>
-        <button className="btn btn-success"><a href="/register" style={{textDecoration:'none', color:'white'}}>Add New Instructor</a></button>
+        <button className="btn btn-success"><a href="/request" style={{textDecoration:'none', color:'white'}}>Add New Instructor</a></button>
         &nbsp;
         &nbsp;
         &nbsp;
         &nbsp;
         <button className="btn btn-success"><a href="/reportgenerate" style={{textDecoration:'none', color:'white'}}>Generate Report</a></button>
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        <button className="btn btn-success"><a href="/request" style={{textDecoration:'none', color:'white'}}>Request Table</a></button>
     </div>
   )
 }

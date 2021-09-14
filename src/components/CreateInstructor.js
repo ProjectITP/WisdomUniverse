@@ -73,7 +73,7 @@ export default class CreateInstructor extends Component {
           <p class="text-primary m-0 font-weight-bold">Apply For This Job</p>
         </div>
         <h4 className="h3 mb-3 font-weight-normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Appilcation Form-Instructor</h4>
-                <form className="needs-validation" noValidate>
+                <form onSubmit={this.onSubmit}>
                 <div class="row">
                     <div class="col">
                     <div className="form-group" style={{marginBottom:'15px'}}>
@@ -82,8 +82,9 @@ export default class CreateInstructor extends Component {
                         className="form-control"
                         name="firstname"
                         placeholder="Enter First Name"
+                        pattern="[a-z A-Z .]+"
                         value={this.state.firstname}
-                        onChange={this.handleInputChange}/>
+                        onChange={this.handleInputChange} required/>
                     </div>
                     </div>
 
@@ -94,8 +95,9 @@ export default class CreateInstructor extends Component {
                         className="form-control"
                         name="lastname"
                         placeholder="Enter Last Name"
+                        pattern="[a-z A-Z .]+"
                         value={this.state.lastname}
-                        onChange={this.handleInputChange}/>
+                        onChange={this.handleInputChange} required/>
                     </div>
                     </div>
                     </div>
@@ -110,7 +112,7 @@ export default class CreateInstructor extends Component {
                                 className="form-control"
                                 name="dob"
                                 value={this.state.dob}
-                                onChange={this.handleInputChange}/>
+                                onChange={this.handleInputChange} required/>
                     </div>
                     </div>
 
@@ -137,7 +139,7 @@ export default class CreateInstructor extends Component {
                         name="address"
                         placeholder="Enter Address"
                         value={this.state.address}
-                        onChange={this.handleInputChange}/>
+                        onChange={this.handleInputChange} required/>
                     </div>
 
 
@@ -150,7 +152,7 @@ export default class CreateInstructor extends Component {
                         name="nic"
                         placeholder="Enter NIC"
                         value={this.state.nic}
-                        onChange={this.handleInputChange}/>
+                        onChange={this.handleInputChange} required/>
                     </div>
                     </div>
 
@@ -161,20 +163,21 @@ export default class CreateInstructor extends Component {
                         className="form-control"
                         name="phoneno"
                         placeholder="Enter Phone no"
+                        pattern="[0-9]{10}"
                         value={this.state.phoneno}
-                        onChange={this.handleInputChange}/>
+                        onChange={this.handleInputChange} required/>
                     </div>
                     </div>
                     </div>
 
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}} >Email</label>
-                        <input type="text"
+                        <input type="email"
                         className="form-control"
                         name="email"
-                        placeholder="Enter email"
+                        placeholder="example@gmail.com"
                         value={this.state.email}
-                        onChange={this.handleInputChange}/>
+                        onChange={this.handleInputChange} required/>
                     </div>                  
 
                     <div class="row">
@@ -185,7 +188,7 @@ export default class CreateInstructor extends Component {
                     style={{width:'400px',height:'34px'}}
                     required
                     value={this.state.hequalification}
-                    onChange={this.handleInputChange}>
+                    onChange={this.handleInputChange} required>
                     <option>Select Highest Edu: Qualification</option>
                     <option>Diploma</option>
                     <option>Higher Diploma</option>
@@ -202,7 +205,7 @@ export default class CreateInstructor extends Component {
                     style={{width:'400px',height:'34px'}}
                     required
                     value={this.state.subject}
-                    onChange={this.handleInputChange}>
+                    onChange={this.handleInputChange} required>
                     <option>Select Subject</option>
                     <option>Combined Maths</option>
                     <option>Physics</option>
@@ -218,10 +221,11 @@ export default class CreateInstructor extends Component {
 
                 
                         
-                    <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
-                        
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Send Application &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </button>
+                    <center>    
+                        <button className="btn btn-success" type="submit" style={{marginTop:'15px', width: '100%'}}>
+                            Send Application 
+                        </button>
+                    </center>
                 </form> 
             </div>
         </div>

@@ -35,7 +35,7 @@ export default class InstructorDetails extends Component {
                 &nbsp;
         
 
-        <div class="shadow-lg p-3 mb-5 bg-white rounded" style={{width:'900px'}}>
+                <div class="shadow-lg p-3 mb-5 bg-white rounded" style={{width:'800px', marginLeft: '200px', marginTop: '75px'}}>
             <div class="card shadow">
                 <div class="card-header py-3">
                     <p class="text-primary m-0 font-weight-bold"><div style={{marginTop:'20px'}}><h4>{firstname} {lastname}</h4></div>
