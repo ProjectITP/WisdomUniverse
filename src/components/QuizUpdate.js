@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import DateRangePicker from 'react-bootstrap-daterangepicker';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-
-// you will need the css that comes with bootstrap@3. if you are using
-// a tool like webpack, you can do the following:
 
 
 export default class QuizUpdate extends Component {
@@ -26,16 +20,14 @@ export default class QuizUpdate extends Component {
 
         const id = this.props.match.params.id
 
-        axios.get(`http://localhost:8070/quiz/get/${id}`).then((res) => {
-                this.setState({
-                    name:res.data.Quiz.name,
-                    duration:res.data.Quiz.duration,
-                    FromDate:res.data.FromDate,
-                    ToDate:res.data.Quiz.ToDate,
-                    Attempts:res.data.Quiz.Attempts
-                });
-
-                console.log(res.data.FromDate);
+        axios.get(`http://localhost:8070/attemptsass/${id}`).then((res) => {
+            this.setState({
+                name:res.data.Quiz.name,
+                duration:res.data.Quiz.duration,
+                FromDate:res.data.FromDate,
+                ToDate:res.data.Quiz.ToDate,
+                Attempts:res.data.Quiz.Attempts
+            });
         });
       }
 
@@ -106,9 +98,7 @@ export default class QuizUpdate extends Component {
                 <div className="row g-3">
                     <div className="col-sm-3" id="datetimepicker1">
                             <label for="exampleInputEmail1" className="form-label">Quiz Availability</label>
-                            <DatePicker id="example-datepicker" name="FromDate" startDate="FromDate" value={this.state.Fro} onChange={(date)=>this.handleInputChange(date, 'FromDate')} />
-                                <input type="date" className="form-control date" id="datepicker" placeholder="From date" name="FromDate" value={this.state.FromDate}  onChange={this.handleInputChange} required={true}/>
-                                
+                            <input type="date" className="form-control date" id="datepicker" placeholder="From date" name="FromDate" value={this.state.FromDate}  onChange={this.handleInputChange} required={true}/>
                             <div id="emailHelp" className="form-text">From date (Unhide the quiz)</div>
                     </div>
                     

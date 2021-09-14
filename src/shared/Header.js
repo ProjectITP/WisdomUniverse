@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 function Header(){
 
@@ -6,58 +7,57 @@ function Header(){
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/" style={{color:"red"}}>Wisdom Universe</a>
+                    <Link class="navbar-brand" to="/" style={{color:"red"}}>Wisdom Universe</Link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                        <a class="nav-link active" href="/">Home</a>
+                        <Link class="nav-link active" to="/">Home</Link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Students</a>
+                            <Link class="nav-link" to="">Students</Link>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link class="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Instructor
-                            </a>
+                            </Link>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="">Instructor</a></li>
-                                <li><a class="dropdown-item" href="/">All Instructors</a></li>
-                                <li><a class="dropdown-item" href="/request">All Requests</a></li>
-                                <li><a class="dropdown-item" href="/register">Sign-up</a></li>
-                                <li><a class="dropdown-item" href="#">Update Instructor</a></li>
-                                <li><a class="dropdown-item" href="#">Add Instructor</a></li>
-                                <li><a class="dropdown-item" href="/reportgenerate">Report Generate</a></li>
-                                                                
+                                <li><Link class="dropdown-item" to="">Instructor</Link></li>
+                                <li><Link class="dropdown-item" to="/">All Instructors</Link></li>
+                                <li><Link class="dropdown-item" to="/request">All Requests</Link></li>
+                                <li><Link class="dropdown-item" to="/register">Sign-up</Link></li>
+                                <li><Link class="dropdown-item" to="#">Update Instructor</Link></li>
+                                <li><Link class="dropdown-item" to="#">Add Instructor</Link></li>
+                                <li><Link class="dropdown-item" to="/reportgenerate">Report Generate</Link></li>                              
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Notices</a> 
+                            <Link class="nav-link" to="">Notices</Link> 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Resources</a>
+                            <Link class="nav-link" to="#">Resources</Link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Subject</a>
+                            <Link class="nav-link" to="#">Subject</Link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Payements</a>
+                            <Link class="nav-link" to="">Payements</Link>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link class="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Assessments
-                            </a>
+                            </Link>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="">Quiz</a></li>
-                                <li><a class="dropdown-item" href="/i/quiz">View Quiz(I)</a></li>
-                                <li><a class="dropdown-item" href="/i/quiz">View Quiz(S)</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><Link class="dropdown-item" to="">Quiz</Link></li>
+                                <li><Link class="dropdown-item" to="/i/quiz">View Quiz(I)</Link></li>
+                                <li><Link class="dropdown-item" to="/i/quiz">View Quiz(S)</Link></li>
+                                <li><Link class="dropdown-item" to="#">Another action</Link></li>
                                 <li><hr class="dropdown-divider"/></li>
-                                <li><a class="dropdown-item" href="#">Assignment</a></li>
-                                <li><a class="dropdown-item" href="/i/assignment">View Assignments(I)</a></li>
-                                <li><a class="dropdown-item" href="#">Assignment</a></li>
+                                <li><Link class="dropdown-item" to="#">Assignment</Link></li>
+                                <li><Link class="dropdown-item" to="/i/assignment">View Assignments(I)</Link></li>
+                                <li><Link class="dropdown-item" to="#">Assignment</Link></li>
                             </ul>
                         </li>
                         

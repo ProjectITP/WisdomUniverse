@@ -14,6 +14,8 @@ import ViewAssignment from './components/AssignmentView'
 import AssignmentAdd from './components/AssignmentAdd';
 
 
+
+
 import Header from './shared/Header';
 import Footer from './shared/Footer';
 
@@ -38,11 +40,10 @@ function App() {
 
           <Route path="/i/quiz" exact component={ViewQuiz}/>
           <Route path="/i/quizadd" exact component={QuizAdd}/>
-          <Route path="/i/quizupdate/:id" component={QuizUpdate} exact></Route>
+          <Route path="/i/quizupdate/:id" component={QuizUpdate} exact/>
           <Route path="/i/assignment" exact component={ViewAssignment}/>
           <Route path="/i/assignmentadd" exact component={AssignmentAdd}/>
-
-      
+          
     </div>
     <Footer/>
     </Router>

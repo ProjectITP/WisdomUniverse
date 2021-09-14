@@ -13,12 +13,20 @@
 
     <script src="https://kit.fontawesome.com/8d91a668ff.js" crossorigin="anonymous"></script>
     
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script language="javascript">
+      $(document).ready(function () {
+          $("#txtdate").datepicker({
+              minDate: 0
+          });
+      });
+  </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.

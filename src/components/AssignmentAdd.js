@@ -45,7 +45,7 @@ export default function AssignmentAdd(){
                 <div class="row g-3">
                     <div class="col-sm-3">
                             <label for="exampleInputEmail1" class="form-label">Assignment Availability</label>
-                            <input type="date" class="form-control date" id="startdate" placeholder="From date" 
+                            <input type="date" min='2021-09-14' class="form-control date" id="startdate" placeholder="From date" 
                             onChange={(e)=>{
                                 setStartdate(e.target.value);
                             }}
