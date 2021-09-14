@@ -48,6 +48,7 @@ app.use(instructorRoutes);
 const lecturerRoutes = require('./routes/lecturers');
 app.use(lecturerRoutes);
 
+
 //URL = http://localhost:8070/contactus/
 const contactusRouter = require("./routes/contactuss.js");
 app.use("/contactus",contactusRouter);
@@ -60,4 +61,13 @@ app.use("/notice",noticeRouter);
 //URL = http://localhost:8070/feedback/
 const feedbackRouter = require("./routes/feedbacks.js");
 app.use("/feedback",feedbackRouter);
+
+
+//URL = http://localhost:8070/subject/
+const subjectRoutes = require('./routes/subjects');
+app.use(subjectRoutes);
+
+//URL = http://localhost:8070/material/
+const materialRoutes = require('./routes/materials');
+app.use(materialRoutes);
 
