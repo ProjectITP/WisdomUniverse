@@ -5,7 +5,7 @@ import axios from 'axios';
 import { API_URL } from '../utils/constants';
 
 
-const Upload = (props) => {
+const Uploadbook = (props) => {
   const [file, setFile] = useState(null); // state for storing actual file
   const [previewSrc, setPreviewSrc] = useState(''); // state for storing previewfile
   const [state, setState] = useState({
@@ -62,7 +62,7 @@ const Upload = (props) => {
             formData.append('edition', edition);
     
             setErrorMsg('');
-            await axios.post(`${API_URL}/upload`, formData, {
+            await axios.post(`${API_URL}/uploadbook`, formData, {
               headers: {
                 'Content-Type': 'multipart/form-data'
               }
@@ -188,4 +188,4 @@ const Upload = (props) => {
   );
 };
 
-export default Upload;
+export default Uploadbook;

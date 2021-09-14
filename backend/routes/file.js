@@ -29,7 +29,7 @@ const upload = multer({
 });
 
 Router.post(
-  '/upload',
+  '/uploadbook',
   upload.single('file'),
   async (req, res) => {
     try {

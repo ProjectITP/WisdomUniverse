@@ -16,7 +16,7 @@ import AssignmentAdd from './components/AssignmentAdd';
 
 
 //resources
-import Upload from './components/Upload';
+import Uploadbook from './components/Uploadbook';
 import AllResources from './components/AllResources';
 import Resources from './components/Resources';
 import PastpaperUpload from './components/PastpaperUpload';
@@ -56,7 +56,7 @@ function App() {
           <Route path="/i/assignmentadd" exact component={AssignmentAdd}/>
 
 
-          <Route component={Upload} path="/add" exact={true} />
+          <Route component={Uploadbook} path="/add" exact={true} />
           <Route component={AllResources} path="/list" />
           <Route component={Resources} path="/student" />
           <Route component={PastpaperUpload} path="/paper" />
