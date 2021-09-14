@@ -65,8 +65,25 @@ function Header(){
                                 
                             </ul>    
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Payements</a>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Payments
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/upload">Payments</a></li>
+                                <li>< a href="/getPayments" class="dropdown-item" >All Payments</a></li>
+                    
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Enrollment
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">                        
+                                <li><a href ="/viewEnroll" class="dropdown-item" >Enrolled Students</a></li>
+                                <li><a href="/enrollKey" class="dropdown-item">Enrolled Keys</a></li>
+                                <li><a href="/enrollSub" class="dropdown-item" >Enrollment</a></li>                    
+                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

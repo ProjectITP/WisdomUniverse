@@ -49,6 +49,22 @@ const lecturerRoutes = require('./routes/lecturers');
 app.use(lecturerRoutes);
 
 
+//payment
+//http://localhost:8070/file/
+const file=require('./routes/StudentPayments');
+app.use('/file',file)
+
+//enroll
+//http://localhost:8070/enroll/
+const enrollRoutes = require(`./routes/Enrolls`);
+app.use(enrollRoutes);
+
+//enrollKeys
+//http://localhost:8070/enrollKey
+const enrollKeyRoutes = require(`./routes/EnrollKeys`);
+app.use(enrollKeyRoutes);
+
+
 //URL = http://localhost:8070/contactus/
 const contactusRouter = require("./routes/contactuss.js");
 app.use("/contactus",contactusRouter);
@@ -70,4 +86,5 @@ app.use(subjectRoutes);
 //URL = http://localhost:8070/material/
 const materialRoutes = require('./routes/materials');
 app.use(materialRoutes);
+
 
