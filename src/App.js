@@ -12,6 +12,15 @@ import QuizAdd from './components/QuizAdd';
 import QuizUpdate from './components/QuizUpdate';
 import ViewAssignment from './components/AssignmentView'
 import AssignmentAdd from './components/AssignmentAdd';
+import AddEnroll from './components/AddEnroll';
+import UpdateEnroll from './components/UpdateEnroll';
+import ViewEnroll from './components/ViewEnroll';
+import ViewEnrollKey from './components/ViewEnrollKey';
+import AddEnrollKey from './components/AddEnrollKey';
+import UpdateEnrollKey from './components/UpdateEnrollKey';
+import ViewEnrollSub from './components/EnrollSubject';
+import Upload from './components/Upload';
+import ViewUpload from './components/ViewUpload';
 
 
 import Header from './shared/Header';
@@ -42,6 +51,17 @@ function App() {
           <Route path="/i/assignment" exact component={ViewAssignment}/>
           <Route path="/i/assignmentadd" exact component={AssignmentAdd}/>
 
+
+          <Route path="/viewEnroll" exact component={ViewEnroll}/>  
+            <Route path="/enroll/add" exact component={AddEnroll}/>
+            <Route path="/Update/:id" exact component={UpdateEnroll}/>
+            <Route path="/enrollKey" exact component={ViewEnrollKey}/>
+            <Route path="/enrollKey/add" exact component={AddEnrollKey}/>
+            <Route path="/enrollKey/update/:id" exact component={UpdateEnrollKey}/>
+            <Route path="/enrollSub" exact component={ViewEnrollSub}/>
+            <Route path = "/upload" exact component={Upload}/>
+            <Route path="/getPayments" exact component={ViewUpload}/>          
+      
       
     </div>
     <Footer/>
