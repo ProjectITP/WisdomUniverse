@@ -6,10 +6,10 @@ let Quiz = require("../models/Quiz.js");
 router.route("/addquiz").post((req,res)=>{
 
     const name =req.body.name;
-    const duration=req.body.duration;
+    const duration=Number(req.body.duration);
     const FromDate=req.body.FromDate;
-    const ToDate=req.body.ToDate;
-    const Attempts=req.body.Attempts;
+    const ToDate=Date(req.body.ToDate);
+    const Attempts=Number(req.body.Attempts);
     
     const newQuiz = new Quiz({
         name,
@@ -76,10 +76,10 @@ router.route("/get/:id").get(async(req,res)=>{
 
     await Quiz.findById(QuizId)
     .then((Quiz)=>{
-        res.status(200).send({status:"Quiz fetched",Quiz});
+        return res.status(200).send({status:"Quiz fetched",Quiz});
     }).catch((err)=>{
         console.log(err);
-        res.status(500).send({status:"Error with fetch quiz",error:err.message});
+        return res.status(500).send({status:"Error with fetch quiz",error:err.message});
     })
 
 })
