@@ -47,3 +47,11 @@ app.use(instructorRoutes);
 //URL = http://localhost:8070/lecturer/
 const lecturerRoutes = require('./routes/lecturers');
 app.use(lecturerRoutes);
+
+//URL = http://localhost:8070/subject/
+const subjectRoutes = require('./routes/subjects');
+app.use(subjectRoutes);
+
+//URL = http://localhost:8070/material/
+const materialRoutes = require('./routes/materials');
+app.use(materialRoutes);
