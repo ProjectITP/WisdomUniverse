@@ -29,7 +29,6 @@ import EditMaterial from "./components/EditMaterial";
 import ViewMaterialsInstructor from './components/ViewMaterialsInstructor';
 
 
-import ViewQuiz from './components/QuizViewAll';
 import QuizAdd from './components/QuizAdd';
 import QuizUpdate from './components/QuizUpdate';
 import ViewAssignment from './components/AssignmentView'
