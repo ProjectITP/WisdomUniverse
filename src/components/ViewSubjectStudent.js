@@ -90,7 +90,7 @@ handleSearchArea= (e) =>{
                     <tr key={index} >
                       <th scope="row">{index+1}</th>
                       <td className="fw-bolder">
-                        <a href={`/subject/${subjects._id}`} style={{textDecoration:'none',color:'#1e6fa0',fontFamily:'Lucida Sans,sans-serif'}}>
+                        <a href={`/subjectDetails/${subjects._id}`} style={{textDecoration:'none',color:'#1e6fa0',fontFamily:'Lucida Sans,sans-serif'}}>
                         {subjects.subjectName}
                         </a>
                         </td>

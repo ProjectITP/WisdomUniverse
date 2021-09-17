@@ -79,7 +79,7 @@ export default class EditMaterial extends Component {
 
       <h4 style={{textAlign:'center'}}>Edit Study Materials</h4>
       <div class="container-fluid  testbox">  
-        <form style={{position:'static',width:'500px', height:'500px'}}>
+        <form className="forms" style={{position:'static',width:'500px', height:'500px'}}>
           <div className="form-group item" style={{marginBottom:'30px'}}>
             <p style={{marginBottom:'5px'}} >Subject Name :</p>
             <input type="text" name="subjectName" className="form-control" placeholder="Subject Name" required
