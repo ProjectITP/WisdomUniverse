@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import '../styles.css';
+import '../subject-styles.css';
 import Image from '../students-doing-exam.jpg';
 
 export default class SubjectDetails extends Component {
@@ -37,7 +37,7 @@ export default class SubjectDetails extends Component {
         </div>
         <div className="container">
             <div className="text-uppercase" style={{marginTop:'20px' }}>        
-              <h4 style={{fontSize:'50px',fontFamily:'serif',color:'#1e6fa0',textShadow:'1px 1px 1px blue'}}>{subjectName}</h4>
+              <h4 className="subject-h4" style={{fontSize:'50px',fontFamily:'serif',color:'#1e6fa0',textShadow:'1px 1px 1px blue'}}>{subjectName}</h4>
               <hr width='50%'/>
             </div>
             <table style={{width:'80%'}}><tr>
@@ -86,7 +86,7 @@ export default class SubjectDetails extends Component {
             </td>
             <td scope="row">
               <div className="button" style={{width:'100%'}}>
-              <button className="btn btn-primary btn-lg" type="submit" href="/">Enroll Now</button>
+              <button className="sbutton btn btn-primary btn-lg" type="submit" href="/enrollSub">Enroll Now</button>
               </div>              
             </td>           
             </tr>

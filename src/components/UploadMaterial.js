@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import '../styles.css';
+import '../subject-styles.css';
 
 export default class UploadMaterial extends Component {
 
@@ -56,7 +56,7 @@ export default class UploadMaterial extends Component {
     return (
       <div class="container">  
 
-      <h4 style={{textAlign:'center'}}>Upload Study Materials</h4>
+      <h4 className="subject-h4" style={{textAlign:'center'}}>Upload Study Materials</h4>
       <div class="container-fluid  testbox">  
         <form class="forms"style={{position:'static',width:'500px', height:'500px'}}>
           <div className="form-group item" style={{marginBottom:'30px'}}>
@@ -83,7 +83,7 @@ export default class UploadMaterial extends Component {
                     value={this.state.notes} onChange={this.handleInputChange}/>
           </div>
           <div className="d-grid gap-2">
-            <button type="submit" className="btn btn-primary" onClick={this.onSubmit}>
+            <button type="submit" className="sbutton btn btn-primary" onClick={this.onSubmit}>
             <i className="far fa-check-square"></i> &nbsp;Submit
             </button>
           </div>
