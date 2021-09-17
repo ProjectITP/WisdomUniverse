@@ -1,8 +1,6 @@
 import './App.css';
 
 
-import ViewQuiz from './components/Quiz';
-
 import ViewResults from './components/ViewResults';
 import ViewQuizResults from './components/ViewQuizResults';
 import UpdateQuizResults from './components/UpdateQuizResults';
@@ -29,11 +27,6 @@ import EditMaterial from "./components/EditMaterial";
 import ViewMaterialsInstructor from './components/ViewMaterialsInstructor';
 
 
-import ViewQuiz from './components/QuizViewAll';
-import QuizAdd from './components/QuizAdd';
-import QuizUpdate from './components/QuizUpdate';
-import ViewAssignment from './components/AssignmentView'
-import AssignmentAdd from './components/AssignmentAdd';
 import AddEnroll from './components/AddEnroll';
 import UpdateEnroll from './components/UpdateEnroll';
 import ViewEnroll from './components/ViewEnroll';
@@ -43,6 +36,13 @@ import UpdateEnrollKey from './components/UpdateEnrollKey';
 import ViewEnrollSub from './components/EnrollSubject';
 import Upload from './components/Upload';
 import ViewUpload from './components/ViewUpload';
+
+import QuizAdd from './components/Quiz/QuizAdd';
+import QuizUpdate from './components/Quiz/QuizUpdate';
+import ViewAssignment from './components/Assignment/AssignmentView'
+import AssignmentAdd from './components/Assignment/AssignmentAdd';
+import ViewQuiz from './components/Quiz/QuizViewAll';
+import AssignmentSView from './components/Assignment/AssignmentSView';
 
 import Feedbackform from './components/Feedbackform';
 import View from './components/Notice';
@@ -95,6 +95,8 @@ function App() {
           <Route path="/i/quizupdate/:id" component={QuizUpdate} exact/>
           <Route path="/i/assignment" exact component={ViewAssignment}/>
           <Route path="/i/assignmentadd" exact component={AssignmentAdd}/>
+          <Route path="/s/assignment" exact component={AssignmentSView}/>
+          
 
 
 

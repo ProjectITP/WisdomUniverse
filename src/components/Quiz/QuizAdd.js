@@ -63,7 +63,7 @@ export default function QuizAdd(){
                 <div class="row g-3">
                     <div class="col-sm-3">
                             <label for="exampleInputEmail1" class="form-label">Quiz Availability</label>
-                            <input type="date" class="form-control date" id="txtDate" placeholder="From date" 
+                            <input type="datetime-local" class="form-control date" id="txtDate" placeholder="From date" 
                             onChange={(e)=>{
                                 setStartdate(e.target.value);
                             }}
