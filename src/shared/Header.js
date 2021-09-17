@@ -57,6 +57,7 @@ function Header(){
                                 <li><hr class="dropdown-divider"/></li>
                                 <li><Link class="dropdown-item" to="#">Assignment</Link></li>
                                 <li><Link class="dropdown-item" to="/i/assignment">View Assignments(I)</Link></li>
+                                <li><Link class="dropdown-item" to="/s/assignment">View Assignments(S)</Link></li>
                                 <li><Link class="dropdown-item" to="#">Assignment</Link></li>
                             </ul>
                         </li>  

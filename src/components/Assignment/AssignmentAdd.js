@@ -63,7 +63,7 @@ export default function AssignmentAdd(){
                     </div>
                 </div>
                 <br/>
-                <button class="btn btn-outline-success btn-lg" role="submit"  >Create New Assignment</button>
+                <button class="btn btn-outline-success btn-lg" role="submit">Create New Assignment</button>
             </form>
             </div>
             <br/>

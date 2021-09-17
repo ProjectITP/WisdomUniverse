@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import dateFormat from 'dateformat';
-import moment from 'mo'
 
 
 const today = new Date(),
@@ -27,18 +26,18 @@ export default class QuizUpdate extends Component {
         const id = this.props.match.params.id
         //http://localhost:8070/Quiz/get/${id}
         //http://localhost:8070/assignment/613ddc2eddc0bc5078269d14
-        axios.get(`http://localhost:8070/assignment/613ddc2eddc0bc5078269d14`).then((res) => {
+        axios.get(`http://localhost:8070/Quiz/get/${id}`).then((res) => {
             this.setState({
-                // name:res.data.Quiz.name,
-                // duration:res.data.Quiz.duration,
-                // FromDate:res.data.Quiz.FromDate,
-                // ToDate:dateFormat(res.data.Quiz.ToDate,"yyyy-mm-dd"),
-                // Attempts:res.data.Quiz.Attempts
-                 FromDate:res.data.Assignment.FromDate,
-                 cuDate:new Date()
+                name:res.data.Quiz.name,
+                duration:res.data.Quiz.duration,
+                FromDate:res.data.Quiz.FromDate,
+                ToDate:dateFormat(res.data.Quiz.ToDate,"yyyy-mm-dd"),
+                Attempts:res.data.Quiz.Attempts
+                //  FromDate:res.data.Assignment.FromDate,
+                //  cuDate:new Date()
             });
             console.log(res.data);
-            console.log(dateFormat(today,))
+            // console.log(dateFormat(today,))
             //console.log(dateFormat(res.data.Quiz.FromDate, "yyyy-mm-dd HH:mm:ss"))
         });
       }
@@ -129,14 +128,14 @@ export default class QuizUpdate extends Component {
                         </div>
                     </div>
                 </div>
-                
+                <div className="d-grid gap-2 col-6 mx-auto">
+                <Link to="" className="btn btn-outline-success btn-lg" role="submit" onClick={this.onSubmit} >Update the Quiz</Link>
+            </div>
             </form>
             
             </div>
             <br/>
-            <div className="d-grid gap-2 col-6 mx-auto">
-                <Link to="" className="btn btn-outline-success btn-lg" role="submit" onClick={this.onSubmit} >Update the Quiz</Link>
-            </div>
+            
             
         </div>
         )

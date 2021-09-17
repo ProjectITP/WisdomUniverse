@@ -42,6 +42,7 @@ import QuizUpdate from './components/Quiz/QuizUpdate';
 import ViewAssignment from './components/Assignment/AssignmentView'
 import AssignmentAdd from './components/Assignment/AssignmentAdd';
 import ViewQuiz from './components/Quiz/QuizViewAll';
+import AssignmentSView from './components/Assignment/AssignmentSView';
 
 import Feedbackform from './components/Feedbackform';
 import View from './components/Notice';
@@ -94,6 +95,8 @@ function App() {
           <Route path="/i/quizupdate/:id" component={QuizUpdate} exact/>
           <Route path="/i/assignment" exact component={ViewAssignment}/>
           <Route path="/i/assignmentadd" exact component={AssignmentAdd}/>
+          <Route path="/s/assignment" exact component={AssignmentSView}/>
+          
 
 
 
