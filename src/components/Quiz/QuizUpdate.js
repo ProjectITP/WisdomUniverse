@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import dateFormat from 'dateformat';
+import moment from 'mo'
 
 
+const today = new Date(),
 
+    date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 export default class QuizUpdate extends Component {
 
     constructor(props) {
@@ -13,22 +17,29 @@ export default class QuizUpdate extends Component {
             duration:"",
             FromDate:"",
             ToDate:"",
-            Attempts:""
+            Attempts:"",
+            today
         };
       }
 
       componentDidMount(){
 
         const id = this.props.match.params.id
-
-        axios.get(`http://localhost:8070/attemptsass/${id}`).then((res) => {
+        //http://localhost:8070/Quiz/get/${id}
+        //http://localhost:8070/assignment/613ddc2eddc0bc5078269d14
+        axios.get(`http://localhost:8070/assignment/613ddc2eddc0bc5078269d14`).then((res) => {
             this.setState({
-                name:res.data.Quiz.name,
-                duration:res.data.Quiz.duration,
-                FromDate:res.data.FromDate,
-                ToDate:res.data.Quiz.ToDate,
-                Attempts:res.data.Quiz.Attempts
+                // name:res.data.Quiz.name,
+                // duration:res.data.Quiz.duration,
+                // FromDate:res.data.Quiz.FromDate,
+                // ToDate:dateFormat(res.data.Quiz.ToDate,"yyyy-mm-dd"),
+                // Attempts:res.data.Quiz.Attempts
+                 FromDate:res.data.Assignment.FromDate,
+                 cuDate:new Date()
             });
+            console.log(res.data);
+            console.log(dateFormat(today,))
+            //console.log(dateFormat(res.data.Quiz.FromDate, "yyyy-mm-dd HH:mm:ss"))
         });
       }
 
@@ -99,13 +110,12 @@ export default class QuizUpdate extends Component {
                 <div className="row g-3">
                     <div className="col-sm-3" id="datetimepicker1">
                             <label for="exampleInputEmail1" className="form-label">Quiz Availability</label>
-
+                            <input type="datetime-local" className="form-control" id="enddate" placeholder="To date" name="FromDate" min={this.state.cuDate}  value={this.state.FromDate} onChange={this.handleInputChange} required={true}/>
                             <div id="emailHelp" className="form-text">From date (Unhide the quiz)</div>
                     </div>
-                    
                     <div className="col-sm-4">
                             <label for="exampleInputEmail1" className="form-label col-form-label-lg"></label>
-                            <input type="date" className="form-control" id="enddate" placeholder="To date" name="ToDate"  value={this.state.ToDate} onChange={this.handleInputChange} required={true}/>
+                            <input type="datetime-local" className="form-control" id="enddate" placeholder="To date" name="ToDate" min={this.state.FromDate} value={this.state.ToDate} onChange={this.handleInputChange} required={true}/>
                             <div id="emailHelp" className="form-text">To date (Expire the quiz)</div>
                     </div>
                 </div>
