@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import axios from 'axios';
-import '../styles.css';
+import '../subject-styles.css';
 
 export default class EditSubject extends Component {
 
@@ -152,7 +152,7 @@ export default class EditSubject extends Component {
                     <input type="file" name="file" accept="file/*"/>
                 </div>*/}
 
-                        <button className="button" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
+                        <button className="sbutton" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
                             <i className="far fa-check-square"></i> &nbsp;Update
                         </button>
 

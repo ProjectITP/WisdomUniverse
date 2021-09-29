@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import '../styles.css';
+import '../subject-styles.css';
 
 export default class  ViewMaterialsStudent extends Component {
 
@@ -34,7 +34,7 @@ export default class  ViewMaterialsStudent extends Component {
       <div className="container">  
       <div className="row">
            <div className="col-lg-9 mt-2 mb-2">
-           <h1 className="text-uppercase font-weight-bold">Subject Materials</h1>           
+           <h1 className="subject-h1 text-uppercase font-weight-bold">Subject Materials</h1>           
            </div>
          </div>      
        <table className="table table-hover" style={{marginTop:'40px',width:'100%'}}>
