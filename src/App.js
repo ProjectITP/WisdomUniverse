@@ -42,7 +42,6 @@ import AllRequest from "./components/AllRequest";
 import EditLecturer from "./components/EditLecturer";
 import CreateInstructor from "./components/CreateInstructor";
 
-import Header from "./shared/Header";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import ViewSubjectStudent from "./components/ViewSubjectStudent";
