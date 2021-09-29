@@ -63,6 +63,7 @@ code {
   color: #656565;
   font-weight: 400;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .signup-links .nav-link {
@@ -70,8 +71,10 @@ code {
   color: #198754;
 }
 
-#content {
+.content {
   padding: 45px 20px;
+  min-height: 92vh;
+  background: #fbfbfb;
 }
 
 .alert {
