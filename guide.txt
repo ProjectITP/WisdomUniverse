@@ -4,4 +4,8 @@ Run these comments before run the app
 npm install
 npm install axios
 npm install react-router-dom
+npm install downloadjs@1.4.7
+npm install node-sass@4.14.1
+npm install react-dropzone@11.2.0
+npm install dateformat
 /
