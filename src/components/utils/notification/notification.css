@@ -1,0 +1,20 @@
+.errMsg,
+.successMsg {
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.errMsg {
+  background: red;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.successMsg {
+  background: green;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 10px;
+}

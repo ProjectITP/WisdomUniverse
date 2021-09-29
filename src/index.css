@@ -1,13 +1,96 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.topHeader {
+  padding: 10px 0;
+}
+
+.notification-bar {
+  padding: 0;
+}
+.signupBlock {
+  margin-bottom: 0;
+}
+.signupBlock li {
+  display: inline-block;
+}
+
+.signupBlock .dropdown li {
+  display: block;
+}
+.profilePic {
+  display: flex;
+  align-items: center;
+}
+.profilePic p {
+  margin-bottom: 0;
+}
+.profilePic img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #f8f8f8;
+  margin-right: 10px;
+}
+
+.profilePic a {
+  text-decoration: none;
+}
+
+.profilePic .personName {
+  font-weight: bold;
+  color: #333;
+  display: block;
+}
+
+.profilePic .logout {
+  color: #656565;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.signup-links .nav-link {
+  display: inline-block;
+  color: #198754;
+}
+
+#content {
+  padding: 45px 20px;
+}
+
+.alert {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.subtitle {
+  font-weight: bold;
+}
+
+.desc-text {
+  color: #656565;
+}
+
+a {
+  color: #198754;
+}
+
+@import url("./components/body/auth/auth.css");
+@import url("./components/body/studentProfile/studentProfile.css");
+@import url("./components/body/adminProfile/adminProfile.css");
