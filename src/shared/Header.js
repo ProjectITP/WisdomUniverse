@@ -12,7 +12,7 @@ function Header() {
     try {
       await axios.get("/student/logout");
       localStorage.removeItem("firstLogin");
-      window.location.href = "/";
+      window.location.href = "/studentlogin";
     } catch (err) {
       window.location.href = "/";
     }
@@ -26,9 +26,9 @@ function Header() {
           <Link to="/profile" className="personName">
             {student.firstName}
           </Link>
-          <Link to="/" onClick={studentLogout} className="logout">
+          <p onClick={studentLogout} className="logout">
             Logout
-          </Link>
+          </p>
         </p>
       </div>
     );
@@ -36,7 +36,7 @@ function Header() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
           <Link className="navbar-brand" to="/" style={{ color: "red" }}>
             Wisdom Universe
