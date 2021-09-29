@@ -34,40 +34,42 @@ function ForgotPassword() {
     }
   };
   return (
-    <div>
-      <div className="row">
-        <div className="col">
-          <h2 className="h3 subtitle text-center">Forgot password?</h2>
-          <p className="desc-text text-center">
-            Enter correct email address to get the verification link.
-          </p>
-          <div className="loginForm">
-            {err && showErrorMsg(err)}
-            {success && showSuccessMsg(success)}
+    <section className="content" id="forgotStudentPassword">
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <h2 className="h3 subtitle text-center">Forgot password?</h2>
+            <p className="desc-text text-center">
+              Enter correct email address to get the verification link.
+            </p>
+            <div className="loginForm">
+              {err && showErrorMsg(err)}
+              {success && showSuccessMsg(success)}
 
-            <div className="form-group">
-              <label htmlFor="email" className="mb-2">
-                Email address
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="form-control"
-                placeholder="Email address"
-                value={email}
-                onChange={handleChangeInput}
-              />
-            </div>
-            <div className="form-group mt-1">
-              <button onClick={RequestPassword} className="btn btn-success">
-                Verify your email address
-              </button>
+              <div className="form-group">
+                <label htmlFor="email" className="mb-2">
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="form-control"
+                  placeholder="Email address"
+                  value={email}
+                  onChange={handleChangeInput}
+                />
+              </div>
+              <div className="form-group mt-1">
+                <button onClick={RequestPassword} className="btn btn-success">
+                  Verify your email address
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -48,60 +48,67 @@ function StudentLogin() {
   };
 
   return (
-    <div className="row d-flex align-items-center">
-      <div className="col">
-        <h2 className="h3 text-center subtitle">Student Login</h2>
-        <p className="text-center desc-text">
-          Login to class room using your student login details here.
-        </p>
-        <div className="loginForm">
-          {err && showErrorMsg(err)}
-          {success && showSuccessMsg(success)}
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                className="form-control"
-                name="email"
-                id="email"
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={handleChangeInput}
-              />
+    <section class="content" id="studentLogin">
+      <div className="container">
+        <div className="row d-flex align-items-center">
+          <div className="col">
+            <h2 className="h3 text-center subtitle">Student Login</h2>
+            <p className="text-center desc-text">
+              Login to class room using your student login details here.
+            </p>
+            <div className="loginForm">
+              {err && showErrorMsg(err)}
+              {success && showSuccessMsg(success)}
+              <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    className="form-control"
+                    name="email"
+                    id="email"
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={handleChangeInput}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Password</label>
+                  <input
+                    className="form-control"
+                    name="password"
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={handleChangeInput}
+                  />
+                </div>
+                <div className="form-group mt-1 d-flex align-items-center justify-content-between">
+                  <button
+                    type="submit"
+                    className="btn d-inline-block btn-success"
+                  >
+                    Login
+                  </button>
+                  <Link to="/forgotpassword" className="inline-link">
+                    Forgot password?
+                  </Link>
+                </div>
+                <div className="form-group mt-3">
+                  <p>
+                    New student?
+                    <Link to="/studentregister" className="inline-link">
+                      Register here
+                    </Link>
+                  </p>
+                </div>
+              </form>
             </div>
-            <div className="form-group">
-              <label htmlFor="email">Password</label>
-              <input
-                className="form-control"
-                name="password"
-                type="password"
-                id="password"
-                placeholder="Password"
-                value={password}
-                onChange={handleChangeInput}
-              />
-            </div>
-            <div className="form-group mt-1 d-flex align-items-center justify-content-between">
-              <button type="submit" className="btn d-inline-block btn-success">
-                Login
-              </button>
-              <Link to="/forgotpassword" className="inline-link">
-                Forgot password?
-              </Link>
-            </div>
-            <div className="form-group mt-3">
-              <p>
-                New student?
-                <Link to="/studentregister" className="inline-link">
-                  Register here
-                </Link>
-              </p>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -56,3 +56,17 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: #7b7b7b;
 }
+
+#studentRegister {
+  background: #f8f8f8
+    url(https://res.cloudinary.com/dhdg4uhps/image/upload/v1631603518/pexels-olia-danilevich-5088017_mvzdvf.jpg)
+    no-repeat center center fixed;
+  background-size: cover;
+}
+
+#studentLogin {
+  background: #f8f8f8
+    url(https://res.cloudinary.com/dhdg4uhps/image/upload/v1631603729/pexels-august-de-richelieu-4260485_pdorm9.jpg)
+    no-repeat center top fixed;
+  background-size: cover;
+}

@@ -63,50 +63,59 @@ function ResetStudentPassword() {
   };
 
   return (
-    <div className="row">
-      <div className="col">
-        <h2 className="h3 text-center subtitle">Reset Password</h2>
-        <p className="text-center desc-text">Create your new password here</p>
-        <div className="loginForm">
-          {err && showErrorMsg(err)}
-          {success && showSuccessMsg(success)}
+    <section className="content" id="resetStudentPassword">
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <h2 className="h3 text-center subtitle">Reset Password</h2>
+            <p className="text-center desc-text">
+              Create your new password here
+            </p>
+            <div className="loginForm">
+              {err && showErrorMsg(err)}
+              {success && showSuccessMsg(success)}
 
-          <div className="form-group">
-            <label htmlFor="password" className="mb-2">
-              Enter new password
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              className="form-control"
-              placeholder="Password"
-              value={password}
-              onChange={handleChangeInput}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password2" className="mb-2">
-              Verify new password
-            </label>
-            <input
-              type="password"
-              id="password2"
-              name="password2"
-              className="form-control"
-              placeholder="Retype password"
-              value={password2}
-              onChange={handleChangeInput}
-            />
-          </div>
-          <div className="form-group mt-1">
-            <button onClick={handleResetPassword} className="btn btn-success">
-              Reset Password
-            </button>
+              <div className="form-group">
+                <label htmlFor="password" className="mb-2">
+                  Enter new password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  className="form-control"
+                  placeholder="Password"
+                  value={password}
+                  onChange={handleChangeInput}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password2" className="mb-2">
+                  Verify new password
+                </label>
+                <input
+                  type="password"
+                  id="password2"
+                  name="password2"
+                  className="form-control"
+                  placeholder="Retype password"
+                  value={password2}
+                  onChange={handleChangeInput}
+                />
+              </div>
+              <div className="form-group mt-1">
+                <button
+                  onClick={handleResetPassword}
+                  className="btn btn-success"
+                >
+                  Reset Password
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
