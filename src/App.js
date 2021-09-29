@@ -187,7 +187,6 @@ function App() {
       </section>
 
     <div>
-      <Header/>
       
       {/* <Route path="/" exact component={CounterClass} /> */}
 
