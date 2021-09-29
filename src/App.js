@@ -67,68 +67,64 @@ function App() {
   return (
     <Router>
       <Header />
-      <section id="content">
-        <div className="container">
-          {/* <Route path="/" exact component={CounterClass} /> */}
+      {/* <Route path="/" exact component={CounterClass} /> */}
 
-          <Route path="/i/quiz" exact component={ViewQuiz} />
+      <Route path="/i/quiz" exact component={ViewQuiz} />
 
-          <Route
-            path="/studentlogin"
-            component={isLogged ? NotFound : StudentLogin}
-            exact
-          ></Route>
-          <Route
-            path="/adminlogin"
-            component={isLogged ? NotFound : AdminLogin}
-            exact
-          ></Route>
+      <Route
+        path="/studentlogin"
+        component={isLogged ? NotFound : StudentLogin}
+        exact
+      ></Route>
+      <Route
+        path="/adminlogin"
+        component={isLogged ? NotFound : AdminLogin}
+        exact
+      ></Route>
 
-          <Route
-            path="/studentregister"
-            component={isLogged ? NotFound : StudentRegister}
-            exact
-          ></Route>
+      <Route
+        path="/studentregister"
+        component={isLogged ? NotFound : StudentRegister}
+        exact
+      ></Route>
 
-          <Route
-            path="/forgotpassword"
-            component={isLogged ? NotFound : ForgotPassword}
-            exact
-          ></Route>
+      <Route
+        path="/forgotpassword"
+        component={isLogged ? NotFound : ForgotPassword}
+        exact
+      ></Route>
 
-          <Route
-            path="/student/reset/:token"
-            component={isLogged ? NotFound : ResetStudentPassword}
-            exact
-          ></Route>
+      <Route
+        path="/student/reset/:token"
+        component={isLogged ? NotFound : ResetStudentPassword}
+        exact
+      ></Route>
 
-          <Route
-            path="/profile"
-            component={isLogged ? StudentProfile : NotFound}
-            exact
-          ></Route>
+      <Route
+        path="/profile"
+        component={isLogged ? StudentProfile : NotFound}
+        exact
+      ></Route>
 
-          <Route
-            path="/adminprofile"
-            component={isLogged ? AdminProfile : NotFound}
-            exact
-          ></Route>
+      <Route
+        path="/adminprofile"
+        component={isLogged ? AdminProfile : NotFound}
+        exact
+      ></Route>
 
-          <Route
-            path="/student/activate/:activation_token"
-            component={ActivationEmail}
-            exact
-          ></Route>
+      <Route
+        path="/student/activate/:activation_token"
+        component={ActivationEmail}
+        exact
+      ></Route>
 
-          <Route path="/" exact component={AllInstructor} />
-          <Route path="/edit/:id" exact component={EditInstructor} />
-          <Route path="/instructor/:id" exact component={InstructorDetails} />
-          <Route path="/reportgenerate" exact component={GenerateReport} />
-          <Route path="/request" exact component={AllRequest} />
-          <Route path="/editrequest/:id" exact component={EditLecturer} />
-          <Route path="/register" exact component={CreateInstructor} />
-        </div>
-      </section>
+      <Route path="/" exact component={AllInstructor} />
+      <Route path="/edit/:id" exact component={EditInstructor} />
+      <Route path="/instructor/:id" exact component={InstructorDetails} />
+      <Route path="/reportgenerate" exact component={GenerateReport} />
+      <Route path="/request" exact component={AllRequest} />
+      <Route path="/editrequest/:id" exact component={EditLecturer} />
+      <Route path="/register" exact component={CreateInstructor} />
     </Router>
   );
 }
