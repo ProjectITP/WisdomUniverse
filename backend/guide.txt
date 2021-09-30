@@ -2,10 +2,15 @@ Run these comments before run the app
 
 /
 npm install
-npm install mongoose@~5.13.8 (If you got error while running, run this comment)
 npm install nodemon
 
+
 npm i cookie-parser bcrypt jsonwebtoken cloudinary express-fileupload googleapis node-fetch nodemailer (if you get any errors while running the app)
+
+=======
+npm install mongoose@~5.13.8 (If you got error while running, run this comment)
+npm install mongoose-date-format (If you got error while running, run this comment)
+npm install --save multer (If you got error while running, run this comment)
 
 /
 

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const mongooseDateFormat = require('mongoose-date-format');
 const quizSchema = new Schema({
 
     name:{
@@ -12,7 +13,8 @@ const quizSchema = new Schema({
     },
     FromDate:{
         type: Date,
-        required: true
+        required: true,
+        format: "%Y-%m-%d"
     },
     ToDate:{
         type: Date,
@@ -24,6 +26,8 @@ const quizSchema = new Schema({
     }
     
 })
+
+quizSchema.plugin(mongooseDateFormat);  // format: YYYY-MM-DD HH:mm:ss
 
 const Quiz = mongoose.model("quiz",quizSchema);
 module.exports = Quiz;
