@@ -1,6 +1,4 @@
 import "./App.css";
-
-
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -14,13 +12,9 @@ import ViewResults from './components/ViewResults';
 import ViewQuizResults from './components/ViewQuizResults';
 import UpdateQuizResults from './components/UpdateQuizResults';
 
-
-
-
 import axios from "axios";
 
 import StudentLogin from "./components/body/auth/StudentLogin";
-
 
 import AdminLogin from "./components/body/auth/AdminLogin";
 import StudentRegister from "./components/body/auth/StudentRegister";
@@ -32,8 +26,6 @@ import ResetStudentPassword from "./components/body/auth/resetStudentPassword";
 import StudentProfile from "./components/body/studentProfile/StudentProfile";
 import AdminProfile from "./components/body/adminProfile/AdminProfile";
 
-import ViewQuiz from "./components/Quiz";
-
 import AllInstructor from "./components/AllInstructor";
 import EditInstructor from "./components/EditInstructor";
 import InstructorDetails from "./components/InstructorDetails";
@@ -41,8 +33,6 @@ import GenerateReport from "./components/GenerateReport";
 import AllRequest from "./components/AllRequest";
 import EditLecturer from "./components/EditLecturer";
 import CreateInstructor from "./components/CreateInstructor";
-
-import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import ViewSubjectStudent from "./components/ViewSubjectStudent";
 import ViewSubjectInstructor from "./components/ViewSubjectInstructor";
@@ -53,7 +43,6 @@ import ViewMaterialsStudent from "./components/ViewMaterialsStudent";
 import UploadMaterial from "./components/UploadMaterial";
 import EditMaterial from "./components/EditMaterial";
 import ViewMaterialsInstructor from './components/ViewMaterialsInstructor';
-
 
 import AddEnroll from './components/AddEnroll';
 import UpdateEnroll from './components/UpdateEnroll';
@@ -85,10 +74,7 @@ import InsertContactus from './components/InsertContactus';
 import Header from './shared/Header';
 import Footer from './shared/Footer';
 
-
 import {BrowserRouter as Router, Route} from "react-router-dom"
-
-
 
 function App() {
   const dispatch = useDispatch();
@@ -121,13 +107,8 @@ function App() {
 
   return (
     <Router>
-
       <Header />
-      <section id="content">
-        <div className="container">
           {/* <Route path="/" exact component={CounterClass} /> */}
-
-          <Route path="/i/quiz" exact component={ViewQuiz} />
 
           <Route
             path="/studentlogin"
@@ -175,18 +156,6 @@ function App() {
             component={ActivationEmail}
             exact
           ></Route>
-
-          <Route path="/" exact component={AllInstructor} />
-          <Route path="/edit/:id" exact component={EditInstructor} />
-          <Route path="/instructor/:id" exact component={InstructorDetails} />
-          <Route path="/reportgenerate" exact component={GenerateReport} />
-          <Route path="/request" exact component={AllRequest} />
-          <Route path="/editrequest/:id" exact component={EditLecturer} />
-          <Route path="/register" exact component={CreateInstructor} />
-        </div>
-      </section>
-
-    <div>
       
       {/* <Route path="/" exact component={CounterClass} /> */}
 
@@ -197,7 +166,6 @@ function App() {
           <Route path="/request" exact component={AllRequest}/>
           <Route path="/editrequest/:id" exact component={EditLecturer}/>
           <Route path="/register" exact component={CreateInstructor}/>
-
 
           {/*Subject*/}
           <Route path="/ViewSubjectStudent" exact component={ViewSubjectStudent}></Route>
@@ -217,8 +185,6 @@ function App() {
           <Route path="/i/assignment" exact component={ViewAssignment}/>
           <Route path="/i/assignmentadd" exact component={AssignmentAdd}/>
           <Route path="/s/assignment" exact component={AssignmentSView}/>
-          
-
 
 
           <Route path="/viewEnroll" exact component={ViewEnroll}/>  
@@ -229,9 +195,7 @@ function App() {
             <Route path="/enrollKey/update/:id" exact component={UpdateEnrollKey}/>
             <Route path="/enrollSub" exact component={ViewEnrollSub}/>
             <Route path = "/upload" exact component={Upload}/>
-            <Route path="/getPayments" exact component={ViewUpload}/>          
-      
-
+            <Route path="/getPayments" exact component={ViewUpload}/>
 
           <Route path="/add" exact component={InsertContactus} />
           <Route path="/view" exact component={AdminContactView} />
@@ -242,24 +206,11 @@ function App() {
          <Route path="/feedview" exact component={View} />
          <Route path="/feedAdminview" exact component={ViewAdmin} />
          <Route path="/feedupdate/:id" exact component={NoticeUpdate} />
-
       
           <Route path="/i/viewresults" exact component={ViewResults}/>
           <Route path="/i/viewquizresults/:id" exact component={ViewQuizResults}/>
           <Route path="/i/updateresults/:id" exact component={UpdateQuizResults}/>
-
-
-    </div>
-
-  
-
-
-
-           
-
     <Footer/>
-
-
     </Router>
   );
 }
