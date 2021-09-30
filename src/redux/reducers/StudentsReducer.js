@@ -1,19 +1,19 @@
-import ACTIONS from "../actions/";
+import ACTIONS from "../actions/"
 
 const initialState = {
-  students: [],
-};
+    accounts: [],
+}
 
 const studentReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ACTIONS.GET_ALL_STUDENTS:
-      return {
-        ...state,
-        students: action.payload.students,
-      };
-    default:
-      return state;
-  }
-};
+    switch (action.type) {
+        case ACTIONS.GET_ALL_STUDENTS:
+            return {
+                ...state,
+                accounts: action.payload.students
+            }
+        default:
+            return state
+    }
+}
 
-export default studentReducer;
+export default studentReducer

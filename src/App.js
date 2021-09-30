@@ -156,7 +156,7 @@ function App() {
             component={ActivationEmail}
             exact
           ></Route>
-      
+
       {/* <Route path="/" exact component={CounterClass} /> */}
 
       <Route path="/instructor" exact component={AllInstructor}/>
@@ -179,13 +179,12 @@ function App() {
           <Route path="/viewMaterialsInstructor" component={ViewMaterialsInstructor}></Route>
 
 
-          <Route path="/i/quiz" exact component={ViewQuiz}/>
+          {/* <Route path="/i/quiz" exact component={ViewQuiz}/>
           <Route path="/i/quizadd" exact component={QuizAdd}/>
           <Route path="/i/quizupdate/:id" component={QuizUpdate} exact/>
           <Route path="/i/assignment" exact component={ViewAssignment}/>
           <Route path="/i/assignmentadd" exact component={AssignmentAdd}/>
-          <Route path="/s/assignment" exact component={AssignmentSView}/>
-
+          <Route path="/s/assignment" exact component={AssignmentSView}/>  */}
 
           <Route path="/viewEnroll" exact component={ViewEnroll}/>  
             <Route path="/enroll/add" exact component={AddEnroll}/>
@@ -195,7 +194,7 @@ function App() {
             <Route path="/enrollKey/update/:id" exact component={UpdateEnrollKey}/>
             <Route path="/enrollSub" exact component={ViewEnrollSub}/>
             <Route path = "/upload" exact component={Upload}/>
-            <Route path="/getPayments" exact component={ViewUpload}/>
+            {/* <Route path="/getPayments" exact component={ViewUpload}/>           */}
 
           <Route path="/add" exact component={InsertContactus} />
           <Route path="/view" exact component={AdminContactView} />

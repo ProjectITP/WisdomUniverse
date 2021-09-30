@@ -29,12 +29,16 @@ function ActivationEmail() {
 
   console.log(activation_token);
   return (
-    <div className="row">
-      <div className="col-12">
-        {err && showErrorMsg(err)}
-        {success && showSuccessMsg(success)}
+    <section class="content">
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            {err && showErrorMsg(err)}
+            {success && showSuccessMsg(success)}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

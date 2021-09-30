@@ -116,140 +116,147 @@ function StudentRegister() {
   };
 
   return (
-    <div className="row d-flex align-items-center">
-      <div className="col">
-        <h2 className="h4 text-center subtitle">Register as a student</h2>
-        <p className="text-center desc-text">
-          To access classes, please register using your details.
-        </p>
-        <div className="loginForm">
-          {err && showErrorMsg(err)}
-          {success && showSuccessMsg(success)}
+    <section className="content" id="studentRegister">
+      <div className="container">
+        <div className="row d-flex align-items-center">
+          <div className="col">
+            <h2 className="h4 text-center subtitle">Register as a student</h2>
+            <p className="text-center desc-text">
+              To access classes, please register using your details.
+            </p>
+            <div className="loginForm">
+              {err && showErrorMsg(err)}
+              {success && showSuccessMsg(success)}
 
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <input
-                className="form-control"
-                name="firstName"
-                type="text"
-                placeholder="First name"
-                value={firstName}
-                onChange={handleChangeInput}
-              />
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <input
+                    className="form-control"
+                    name="firstName"
+                    type="text"
+                    placeholder="First name"
+                    value={firstName}
+                    onChange={handleChangeInput}
+                  />
+                </div>
+                <div className="mb-3">
+                  <input
+                    className="form-control"
+                    name="lastName"
+                    type="text"
+                    placeholder="Last name"
+                    value={lastName}
+                    onChange={handleChangeInput}
+                  />
+                </div>
+                <div className="mb-3">
+                  <input
+                    className="form-control"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={handleChangeInput}
+                  />
+                </div>
+                <div className="mb-3">
+                  <input
+                    className="form-control"
+                    name="nic"
+                    type="text"
+                    placeholder="NIC"
+                    value={nic}
+                    onChange={handleChangeInput}
+                  />
+                </div>
+                <div className="mb-3">
+                  <input
+                    className="form-control"
+                    name="address"
+                    type="text"
+                    placeholder="Address"
+                    value={address}
+                    onChange={handleChangeInput}
+                  />
+                </div>
+                <div className="mb-2">
+                  <input
+                    className="form-control"
+                    name="phone"
+                    type="tel"
+                    placeholder="Phone"
+                    value={phone}
+                    onChange={handleChangeInput}
+                  />
+                </div>
+                <div className="form-group mb-2">
+                  <label id="genderLabel">Gender</label>
+                  <div className="form-check form-check-inline">
+                    <input
+                      type="radio"
+                      label="Male"
+                      className="form-check-input"
+                      id="male"
+                      checked={gender === "Male"}
+                      value="Male"
+                      onClick={() => setGender("Male")}
+                    />
+                    Male
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      type="radio"
+                      className="form-check-input"
+                      label="Female"
+                      value="Female"
+                      checked={gender === "Female"}
+                      onClick={() => setGender("Female")}
+                    />
+                    Female
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <input
+                    className="form-control"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={handleChangeInput}
+                  />
+                </div>
+                <div className="mb-3">
+                  <input
+                    className="form-control"
+                    name="password2"
+                    type="password"
+                    placeholder="Retype password"
+                    value={password2}
+                    onChange={handleChangeInput}
+                  />
+                </div>
+                <div className="mb-3 mt-1 d-flex align-items-center justify-content-between">
+                  <button
+                    type="submit"
+                    className="btn d-inline-block btn-success"
+                  >
+                    Register
+                  </button>
+                </div>
+                <div className="form-group">
+                  <p className="mb-0">
+                    Already have an account?
+                    <Link to="/studentlogin" className="inline-link">
+                      Login here
+                    </Link>
+                  </p>
+                </div>
+              </form>
             </div>
-            <div className="mb-3">
-              <input
-                className="form-control"
-                name="lastName"
-                type="text"
-                placeholder="Last name"
-                value={lastName}
-                onChange={handleChangeInput}
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                className="form-control"
-                name="email"
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={handleChangeInput}
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                className="form-control"
-                name="nic"
-                type="text"
-                placeholder="NIC"
-                value={nic}
-                onChange={handleChangeInput}
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                className="form-control"
-                name="address"
-                type="text"
-                placeholder="Address"
-                value={address}
-                onChange={handleChangeInput}
-              />
-            </div>
-            <div className="mb-2">
-              <input
-                className="form-control"
-                name="phone"
-                type="tel"
-                placeholder="Phone"
-                value={phone}
-                onChange={handleChangeInput}
-              />
-            </div>
-            <div className="form-group mb-2">
-              <label id="genderLabel">Gender</label>
-              <div className="form-check form-check-inline">
-                <input
-                  type="radio"
-                  label="Male"
-                  className="form-check-input"
-                  id="male"
-                  checked={gender === "Male"}
-                  value="Male"
-                  onClick={() => setGender("Male")}
-                />
-                Male
-              </div>
-              <div className="form-check form-check-inline">
-                <input
-                  type="radio"
-                  className="form-check-input"
-                  label="Female"
-                  value="Female"
-                  checked={gender === "Female"}
-                  onClick={() => setGender("Female")}
-                />
-                Female
-              </div>
-            </div>
-            <div className="mb-3">
-              <input
-                className="form-control"
-                name="password"
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={handleChangeInput}
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                className="form-control"
-                name="password2"
-                type="password"
-                placeholder="Retype password"
-                value={password2}
-                onChange={handleChangeInput}
-              />
-            </div>
-            <div className="mb-3 mt-1 d-flex align-items-center justify-content-between">
-              <button type="submit" className="btn d-inline-block btn-success">
-                Register
-              </button>
-            </div>
-            <div className="form-group">
-              <p className="mb-0">
-                Already have an account?
-                <Link to="/studentlogin" className="inline-link">
-                  Login here
-                </Link>
-              </p>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

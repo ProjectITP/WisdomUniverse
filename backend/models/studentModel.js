@@ -40,11 +40,6 @@ const studentSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter your password"],
     },
-    dob: {
-      type: Date,
-      required: [true, "Please enter your date of birth"],
-      default: Date.now,
-    },
     thumbnail: {
       type: String,
       default:
