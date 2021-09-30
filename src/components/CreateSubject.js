@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import '../styles.css';
+import '../subject-styles.css';
 
 const initialState ={
         subjectName:"",
@@ -101,7 +101,7 @@ export default class CreateSubject extends Component {
   render(){ 
     return(
         <div class="container">
-        <h4 style={{textAlign:'center'}}>Subject Profile</h4>
+        <h4 className="subject-h4" style={{textAlign:'center'}}>Subject Profile</h4>
         <div class="container-fluid testbox">
             
             <form className="forms needs-validation" style={{position:'static'}} novalidate>
@@ -169,7 +169,7 @@ export default class CreateSubject extends Component {
                     <input type="file" name="file" accept="file/*"/>
                     <input type="text" name="providing"/>
                 </div>*/}
-                <button className="btn-block" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
+                <button className="sbutton btn-block" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
                     <i className="far fa-check-square"></i> &nbsp;Save
                 </button>
             </form>

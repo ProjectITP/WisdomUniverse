@@ -52,14 +52,14 @@ import AddEnrollKey from './components/AddEnrollKey';
 import UpdateEnrollKey from './components/UpdateEnrollKey';
 import ViewEnrollSub from './components/EnrollSubject';
 import Upload from './components/Upload';
-// import ViewUpload from './components/ViewUpload';
+import ViewUpload from './components/ViewUpload';
 
-// import QuizAdd from './components/Quiz/QuizAdd';
-// import QuizUpdate from './components/Quiz/QuizUpdate';
-// import ViewAssignment from './components/Assignment/AssignmentView'
-// import AssignmentAdd from './components/Assignment/AssignmentAdd';
-// import ViewQuiz from './components/Quiz/QuizViewAll';
-// import AssignmentSView from './components/Assignment/AssignmentSView';
+import QuizAdd from './components/Quiz/QuizAdd';
+import QuizUpdate from './components/Quiz/QuizUpdate';
+import ViewAssignment from './components/Assignment/AssignmentView'
+import AssignmentAdd from './components/Assignment/AssignmentAdd';
+import ViewQuiz from './components/Quiz/QuizViewAll';
+import AssignmentSView from './components/Assignment/AssignmentSView';
 
 import Feedbackform from './components/Feedbackform';
 import View from './components/Notice';
@@ -156,7 +156,7 @@ function App() {
             component={ActivationEmail}
             exact
           ></Route>
-      
+
       {/* <Route path="/" exact component={CounterClass} /> */}
 
       <Route path="/instructor" exact component={AllInstructor}/>

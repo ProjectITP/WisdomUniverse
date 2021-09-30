@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../styles.css';
+import '../subject-styles.css';
 
 export default class ViewSubjectStudent extends Component {
 constructor(props){
@@ -62,7 +62,7 @@ handleSearchArea= (e) =>{
       <div className="container">
           <div className="row">
            <div className="col-lg-9 mt-2 mb-2">
-           <h1 className="text-uppercase font-weight-bold">All Subjects</h1>
+           <h1 className="subject-h1 text-uppercase font-weight-bold">All Subjects</h1>
            <div className="col-lg-3 mt-2 mb-2">
            <input
              className="form-control"
