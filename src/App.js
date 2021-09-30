@@ -26,8 +26,6 @@ import ResetStudentPassword from "./components/body/auth/resetStudentPassword";
 import StudentProfile from "./components/body/studentProfile/StudentProfile";
 import AdminProfile from "./components/body/adminProfile/AdminProfile";
 
-import ViewQuiz from "./components/Quiz";
-
 import AllInstructor from "./components/AllInstructor";
 import EditInstructor from "./components/EditInstructor";
 import InstructorDetails from "./components/InstructorDetails";
@@ -54,14 +52,14 @@ import AddEnrollKey from './components/AddEnrollKey';
 import UpdateEnrollKey from './components/UpdateEnrollKey';
 import ViewEnrollSub from './components/EnrollSubject';
 import Upload from './components/Upload';
-import ViewUpload from './components/ViewUpload';
+// import ViewUpload from './components/ViewUpload';
 
-import QuizAdd from './components/Quiz/QuizAdd';
-import QuizUpdate from './components/Quiz/QuizUpdate';
-import ViewAssignment from './components/Assignment/AssignmentView'
-import AssignmentAdd from './components/Assignment/AssignmentAdd';
-import ViewQuiz from './components/Quiz/QuizViewAll';
-import AssignmentSView from './components/Assignment/AssignmentSView';
+// import QuizAdd from './components/Quiz/QuizAdd';
+// import QuizUpdate from './components/Quiz/QuizUpdate';
+// import ViewAssignment from './components/Assignment/AssignmentView'
+// import AssignmentAdd from './components/Assignment/AssignmentAdd';
+// import ViewQuiz from './components/Quiz/QuizViewAll';
+// import AssignmentSView from './components/Assignment/AssignmentSView';
 
 import Feedbackform from './components/Feedbackform';
 import View from './components/Notice';
@@ -111,8 +109,6 @@ function App() {
     <Router>
       <Header />
           {/* <Route path="/" exact component={CounterClass} /> */}
-
-          <Route path="/i/quiz" exact component={ViewQuiz} />
 
           <Route
             path="/studentlogin"
@@ -183,12 +179,12 @@ function App() {
           <Route path="/viewMaterialsInstructor" component={ViewMaterialsInstructor}></Route>
 
 
-          <Route path="/i/quiz" exact component={ViewQuiz}/>
+          {/* <Route path="/i/quiz" exact component={ViewQuiz}/>
           <Route path="/i/quizadd" exact component={QuizAdd}/>
           <Route path="/i/quizupdate/:id" component={QuizUpdate} exact/>
           <Route path="/i/assignment" exact component={ViewAssignment}/>
           <Route path="/i/assignmentadd" exact component={AssignmentAdd}/>
-          <Route path="/s/assignment" exact component={AssignmentSView}/> 
+          <Route path="/s/assignment" exact component={AssignmentSView}/>  */}
 
 
           <Route path="/viewEnroll" exact component={ViewEnroll}/>  
@@ -199,7 +195,7 @@ function App() {
             <Route path="/enrollKey/update/:id" exact component={UpdateEnrollKey}/>
             <Route path="/enrollSub" exact component={ViewEnrollSub}/>
             <Route path = "/upload" exact component={Upload}/>
-            <Route path="/getPayments" exact component={ViewUpload}/>          
+            {/* <Route path="/getPayments" exact component={ViewUpload}/>           */}
 
           <Route path="/add" exact component={InsertContactus} />
           <Route path="/view" exact component={AdminContactView} />

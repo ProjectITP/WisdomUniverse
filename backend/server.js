@@ -46,8 +46,8 @@ const AssessmentRouter = require("./routes/Assessment.js");
 app.use("/Assessment",AssessmentRouter);
 
 //URL = http://localhost:8070/quiz/
-const QuizRouter = require("./routes/Quiz.js");
-app.use("/quiz",QuizRouter);
+// const QuizRouter = require("./routes/Quiz.js");
+// app.use("/quiz",QuizRouter);
 
 //URL = http://localhost:8070/instructor/
 const instructorRoutes = require('./routes/instructors');
@@ -66,8 +66,8 @@ app.use("/api", require("./routes/uploadImg"));
 
 //URL = http://localhost:8070/attemptsquiz/
 
-const Attempts_QuizRouter = require("./routes/Attempts_Quiz.js");
-app.use("/attemptsquiz",Attempts_QuizRouter);
+// const Attempts_QuizRouter = require("./routes/Attempts_Quiz.js");
+// app.use("/attemptsquiz",Attempts_QuizRouter);
 
 //URL = http://localhost:8070/attemptsass/
 
@@ -82,8 +82,8 @@ app.use("/assignment",Assignment);
 
 //payment
 //http://localhost:8070/file/
-const file=require('./routes/StudentPayments');
-app.use('/file',file)
+// const file=require('./routes/StudentPayments');
+// app.use('/file',file)
 
 //enroll
 //http://localhost:8070/enroll/
