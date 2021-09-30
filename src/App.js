@@ -186,7 +186,6 @@ function App() {
           <Route path="/i/assignmentadd" exact component={AssignmentAdd}/>
           <Route path="/s/assignment" exact component={AssignmentSView}/>  */}
 
-
           <Route path="/viewEnroll" exact component={ViewEnroll}/>  
             <Route path="/enroll/add" exact component={AddEnroll}/>
             <Route path="/Update/:id" exact component={UpdateEnroll}/>
