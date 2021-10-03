@@ -4,8 +4,7 @@ const Schema = mongoose.Schema;
 
 const AssignmentResultSchema = new Schema({
     Student:{
-        type : Schema.Types.ObjectId,
-        ref:'student',
+        type : String,
         required: true
     },
     Subject:{
