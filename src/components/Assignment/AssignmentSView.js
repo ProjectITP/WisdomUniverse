@@ -1,6 +1,9 @@
 import React,{useEffect, useState} from "react"
 import {Link} from 'react-router-dom'
 import axios from "axios"
+import {saveAs} from 'file-saver';
+import background from './img/back6.jpg'
+import './css/assign.css'
 
 
 export default function ViewAssignment() {
@@ -18,8 +21,10 @@ export default function ViewAssignment() {
     useEffect(()=>getAssignment(),[]);
 
     return(
-        <div className="container">
+        <div style={{ backgroundImage: `url(${background})` , height: "100vh", backgroundSize:"cover"}}>
+        <div className="container assign">
             <h2>Assignments</h2>
+            
             <br/><br/>
             <div>
                 {Assignment.map((Assignment)=>(
@@ -30,6 +35,7 @@ export default function ViewAssignment() {
             </div>
             <br/>           
             
+        </div>
         </div>
     )
 }
