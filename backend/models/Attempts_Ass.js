@@ -4,8 +4,7 @@ const Schema = mongoose.Schema;
 
 const Attempts_AssSchema = new Schema({
     Student:{
-        type : Schema.Types.ObjectId,
-        ref:'student',
+        type : String,
         required: true
     },
     Subject:{
@@ -14,8 +13,7 @@ const Attempts_AssSchema = new Schema({
         required: true
     },
     Instructor:{
-        type : Schema.Types.ObjectId,
-        ref:'instructor',
+        type : String,
         required: true,
         default:''
     },

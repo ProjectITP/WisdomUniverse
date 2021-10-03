@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { ObjectId } = require('mongodb');
 let Attempts_Ass = require("../models/Attempts_Ass.js");
 
 
@@ -6,9 +7,9 @@ let Attempts_Ass = require("../models/Attempts_Ass.js");
 router.route("/add").post((req,res)=>{
 
     const Student =req.body.Student;
-    const Subject=req.body.Subject;
+    const Subject=ObjectId(req.body.Subject);
     const Instructor=req.body.Instructor;
-    const Assignment=req.body.Assignment;
+    const Assignment=ObjectId(req.body.Assignment);
     const AttemptDate=req.body.AttemptDate;
     const MarkingStatus=req.body. MarkingStatus;
     const PublicationStatus=req.body.PublicationStatus;
