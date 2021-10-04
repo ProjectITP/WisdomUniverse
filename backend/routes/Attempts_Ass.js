@@ -1,15 +1,26 @@
 const router = require("express").Router();
-const { ObjectId } = require('mongodb');
+const multer = require("multer");
+const mongoose = require("mongoose")
+const path = require('path')
 let Attempts_Ass = require("../models/Attempts_Ass.js");
 
+const storage = multer.diskStorage({
+    destination:(req,file,callback)=>{
+        callback(null,'./uploads/');
+    },
+    filename:(req,file,callback)=>{
+        callback(null,file.originalname);
+    }
+})
+const upload = multer({storage:storage});
 
 //URL = http://localhost:8070/attemptsass/add
-router.route("/add").post((req,res)=>{
+router.route("/add",upload.single('Subfile')).post((req,res)=>{
 
     const Student =req.body.Student;
-    const Subject=ObjectId(req.body.Subject);
+    const Subject=req.body.Subject;
     const Instructor=req.body.Instructor;
-    const Assignment=ObjectId(req.body.Assignment);
+    const Assignment=req.body.Assignment;
     const AttemptDate=req.body.AttemptDate;
     const MarkingStatus=req.body. MarkingStatus;
     const PublicationStatus=req.body.PublicationStatus;
@@ -21,6 +32,8 @@ router.route("/add").post((req,res)=>{
     const RescrutinyRequest=req.body.escrutinyRequest;
     const RescrutinyNotification=req.body.RescrutinyNotification;
     const PublishStatus=req.body.PublishStatus;
+    const Subfile=req.file.path;
+
 
     const newAttempts_Ass = new Attempts_Ass({
         Student,
@@ -57,7 +70,7 @@ router.route("/").get((req,res)=>{
 })
 
 //URL = http://localhost:8070/attemptsass/update/61399387b941900cf8fe6412
-router.route("/update/:id").put(async(req,res)=>{
+router.route("/update/:id",upload.single("Subfile")).put(async(req,res)=>{
     let Attempts_AssId = req.params.id;
     const {Student,Subject,Instructor,Assignment,AttemptDate,MarkingStatus,PublicationStatus,PlagarismStatus,PlagarismScore,Marks,Grade,Status,RescrutinyRequest,RescrutinyNotification,PublishStatus} = req.body;
     const updateAttempts_Ass = {
