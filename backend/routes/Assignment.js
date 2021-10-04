@@ -33,13 +33,11 @@ router.route("/").get((req,res)=>{
 //URL = http://localhost:8070/assignment/update/61399387b941900cf8fe6412
 router.route("/update/:id").put(async(req,res)=>{
     let AssignmentId = req.params.id;
-    const {name, duration, FromDate, ToDate, Attempts} = req.body;
+    const {name, FromDate, ToDate} = req.body;
     const updateAssignment = {
         name,
-        duration,
         FromDate,
-        ToDate,
-        Attempts
+        ToDate
     }
 
     await Assignment.findByIdAndUpdate(AssignmentId,updateAssignment)

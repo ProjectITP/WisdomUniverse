@@ -14,4 +14,7 @@ npm install -S file-saver
 npm install --save react-datetime
 npm install moment --save
 npm install date-fns --save
+npm install form-data
+npm install react-pdf
+npm install --save react-to-print
 /

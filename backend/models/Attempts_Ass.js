@@ -8,18 +8,14 @@ const Attempts_AssSchema = new Schema({
         required: true
     },
     Subject:{
-        type : Schema.Types.ObjectId,
-        ref:'subject',
-        required: true
+        type : String
     },
     Instructor:{
         type : String,
-        required: true,
         default:''
     },
     Assignment:{
-        type : Schema.Types.ObjectId,
-        ref:'quiz',
+        type : String,
         required: true
     },
     AttemptDate:{
@@ -75,6 +71,10 @@ const Attempts_AssSchema = new Schema({
         type : String,
         required: true,
         default:'false'
+    },
+    Subfile:{
+        type: String,
+        default:""
     }
 })
 
