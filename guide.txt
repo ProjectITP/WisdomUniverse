@@ -15,3 +15,5 @@ npm install --save react-datetime
 npm install moment --save
 npm install date-fns --save
 /
+
+npm react
