@@ -109,6 +109,8 @@ export default class CreateInstructor extends Component {
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}} >DOB</label>
                             <input type="date" 
+                                //min="2020-10-05" 
+                                max="2021-10-05"
                                 class="datepicker" 
                                 data-date-format="mm/dd/yyyy" 
                                 className="form-control"
