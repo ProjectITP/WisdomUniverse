@@ -78,6 +78,7 @@ import InsertContactus from './components/InsertContactus';
 
 import Header from './shared/Header';
 import Footer from './shared/Footer';
+import home from './shared/home';
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
 
@@ -113,6 +114,7 @@ function App() {
   return (
     <Router>
       <Header />
+      <Route path="/" exact component={home}/>
           {/* <Route path="/" exact component={CounterClass} /> */}
 
           <Route
