@@ -17,4 +17,6 @@ npm install date-fns --save
 npm install form-data
 npm install react-pdf
 npm install --save react-to-print
+
+npm i pdf-creator-node --save
 /
