@@ -60,22 +60,7 @@ border-radius: 3px;
 width: calc(100% - 10px);
 padding: 5px;
 }
-.item:hover p, .item:hover i, input:hover::placeholder {
-color: #1c87c9;
-}
-.item input:hover{
-border: 1px solid transparent;
-box-shadow: 0 0 6px 0 #1c87c9;
-color: #1c87c9;
-}
-.item {
-position: relative;
-margin: 10px 0;
-}
-span.required {
-margin-left: 0;
-color: red;
-}
+
 .btn-block {
 margin-top: 10px;
 text-align: center;
@@ -110,7 +95,7 @@ width: calc(50% - 8px);
 .contact-item input, .position-item input {
 width: calc(100% - 12px);
 }
-.table-hover{
+.stable-hover{
 color :#1e6fa0;
 }
 .header__item {

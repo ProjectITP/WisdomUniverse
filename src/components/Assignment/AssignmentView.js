@@ -4,8 +4,62 @@ import axios from "axios"
 import background from './img/back6.jpg'
 import './css/assign.css'
 import { format } from "date-fns";
+import pdf from "pdf-creator-node";
+
 
 export default function ViewAssignment() {
+    // var fs = require('fs');
+    // var html = fs.readFileSync("template.html", "utf8");
+    // var options = {
+    //     format: "A3",
+    //     orientation: "portrait",
+    //     border: "10mm",
+    //     header: {
+    //         height: "45mm",
+    //         contents: '<div style="text-align: center;">Author: Shyam Hajare</div>'
+    //     },
+    //     footer: {
+    //         height: "28mm",
+    //         contents: {
+    //             first: 'Cover page',
+    //             2: 'Second page', // Any page number is working. 1-based index
+    //             default: '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>', // fallback value
+    //             last: 'Last Page'
+    //         }
+    //     }
+    // };
+    // var users = [
+    //     {
+    //       name: "Shyam",
+    //       age: "26",
+    //     },
+    //     {
+    //       name: "Navjot",
+    //       age: "26",
+    //     },
+    //     {
+    //       name: "Vitthal",
+    //       age: "26",
+    //     },
+    //   ];
+    //   var document = {
+    //     html: html,
+    //     data: {
+    //       users: users,
+    //     },
+    //     path: "./output.pdf",
+    //     type: "",
+    //   };
+    function generate(){
+        pdf
+            .create(document)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
     
     const [Assignment, setAssignment]=useState([]);
 
@@ -36,7 +90,7 @@ export default function ViewAssignment() {
             <center><h2>Assignments</h2></center>
             <div class="row justify-content-end">
                 <div class="col-4">
-                    <Link to="/i/assignmentadd" class="btn btn-warning btn-lg" role="button" >Generate Report</Link>
+                    <Link onClick={generate} class="btn btn-warning btn-lg" role="button" >Generate Report</Link>
                 </div>
             </div>
                

@@ -4,18 +4,9 @@ const mongoose = require("mongoose")
 const path = require('path')
 let Attempts_Ass = require("../models/Attempts_Ass.js");
 
-const storage = multer.diskStorage({
-    destination:(req,file,callback)=>{
-        callback(null,'./uploads/');
-    },
-    filename:(req,file,callback)=>{
-        callback(null,file.originalname);
-    }
-})
-const upload = multer({storage:storage});
 
 //URL = http://localhost:8070/attemptsass/add
-router.route("/add",upload.single('Subfile')).post((req,res)=>{
+router.route("/add").post((req,res)=>{
 
     const Student =req.body.Student;
     const Subject=req.body.Subject;

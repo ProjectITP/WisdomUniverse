@@ -11,6 +11,8 @@ import {
 import ViewResults from './components/ViewResults';
 import ViewQuizResults from './components/ViewQuizResults';
 import UpdateQuizResults from './components/UpdateQuizResults';
+import ViewAssignResults from './components/ViewAssignResults';
+import UpdateAssignResults from './components/UpdateAssignResults'
 
 import axios from "axios";
 
@@ -61,7 +63,8 @@ import AssignmentAdd from './components/Assignment/AssignmentAdd';
 import ViewQuiz from './components/Quiz/QuizViewAll';
 import AssignmentSView from './components/Assignment/AssignmentSView';
 import AssignmentUpd from './components/Assignment/AssignmentUpd';
-import Submission from './components/Assignment/Submission'
+import Submission from './components/Assignment/Submission';
+import AddSubmission from './components/Assignment/AddSubmission';
 
 import Feedbackform from './components/Feedbackform';
 import View from './components/Notice';
@@ -75,6 +78,7 @@ import InsertContactus from './components/InsertContactus';
 
 import Header from './shared/Header';
 import Footer from './shared/Footer';
+import home from './shared/home';
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
 
@@ -110,6 +114,7 @@ function App() {
   return (
     <Router>
       <Header />
+      <Route path="/" exact component={home}/>
           {/* <Route path="/" exact component={CounterClass} /> */}
 
           <Route
@@ -189,6 +194,7 @@ function App() {
           <Route path="/s/assignment" exact component={AssignmentSView}/>
           <Route path="/i/assignmentupdate/:id" exact component={AssignmentUpd}/>
           <Route path="/s/submission/:id" exact component={Submission}/>
+          <Route path="/s/submission/upload/:id" exact component={AddSubmission}/>
           
 
 
@@ -215,6 +221,10 @@ function App() {
           <Route path="/i/viewresults" exact component={ViewResults}/>
           <Route path="/i/viewquizresults/:id" exact component={ViewQuizResults}/>
           <Route path="/i/updateresults/:id" exact component={UpdateQuizResults}/>
+          <Route path="/i/viewassignresults/:id" exact component={ViewAssignResults}/>
+          <Route path="/i/updateassignresults/:id" exact component={UpdateAssignResults}/>
+          
+          
     <Footer/>
     </Router>
   );

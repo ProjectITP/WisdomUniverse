@@ -53,7 +53,7 @@ export default function ViewResults() {
                     <ul>
                         <div class="row g-3">
                             <div class="col-sm-2">
-                                <h5><Link to={`/i/viewquizresults/${Ass._id}`} style={{textDecoration:'none'}}>{Ass.name}</Link></h5>
+                                <h5><Link to={`/i/viewassignresults/${Ass._id}`} style={{textDecoration:'none'}}>{Ass.name}</Link></h5>
 
                             </div>
                         </div>

@@ -9,6 +9,8 @@ export default function AssignmentAdd(){
 
     
     const [name,setName] = useState("");
+    const [subject,setSubject] = useState("");
+    const [instructor,setInst] = useState("");
     const [FromDate,setStartdate] = useState();
     const [ToDate,setEnddate] = useState(new Date());
 
@@ -17,6 +19,8 @@ export default function AssignmentAdd(){
 
          const newAssignment = {
             name,
+            subject,
+            instructor,
             FromDate,
             ToDate
          }
@@ -34,11 +38,13 @@ export default function AssignmentAdd(){
     let fdate = {
         name: "FromDate",
         placeholder: "From Date",
+        required:true
         
     };
     let tdate = {
         name: "ToDate",
-        placeholder: "To Date"
+        placeholder: "To Date",
+        required:true
     };
     return(
         <div style={{ backgroundImage: `url(${background})` , height: "100vh", backgroundSize:"cover"}}>
@@ -52,11 +58,35 @@ export default function AssignmentAdd(){
                     <div class="col-sm-8">
                         <div class="mb-3 col">
                             <label for="exampleInputEmail1" class="form-label">Assignment Name</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" name="name"
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="name" required={true} 
                             onChange={(e)=>{
                                 setName(e.target.value);
                             }} />
                             <div id="emailHelp" class="form-text">Type a assignment name</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-sm-8">
+                        <div class="mb-3 col">
+                            <label for="exampleInputEmail1" class="form-label">Subject Name</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="subject" required={true} 
+                            onChange={(e)=>{
+                                setSubject(e.target.value);
+                            }} />
+                            <div id="emailHelp" class="form-text">Type the subject name</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-sm-8">
+                        <div class="mb-3 col">
+                            <label for="exampleInputEmail1" class="form-label">Instructor Name</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="name" required={true} 
+                            onChange={(e)=>{
+                                setInst(e.target.value);
+                            }} />
+                            <div id="emailHelp" class="form-text">Type the instructor name</div>
                         </div>
                     </div>
                 </div>
