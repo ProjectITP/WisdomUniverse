@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import dateFormat from 'dateformat';
+import Datetime from 'react-datetime';
+import moment from "moment";
 
 
 const today = new Date(),
@@ -48,7 +50,19 @@ export default class QuizUpdate extends Component {
               [e.target.name]:e.target.value
           })
       }
-
+    handleFromDate=(event)=>{
+        this.setState({...this.state, FromDate: event})
+    };
+    handleToDate=(event)=>{
+        this.setState({...this.state, ToDate: event}) 
+    };
+    valid = function(current) {
+        var yesterday = moment().add(1, 'hours');
+        return current.isAfter(yesterday);
+    }
+    tovalid = function(current){
+        return current.isAfter(this.state.FromDate);
+    };
       onSubmit=(e)=>{
         e.preventDefault();
         const id = this.props.match.params.id;
@@ -78,12 +92,33 @@ export default class QuizUpdate extends Component {
             alert(err);
         })
     }
+    valid = function(current) {
+        var yesterday = moment().add(1, 'hours');
+        return current.isAfter(yesterday);
+    }
+    tovalid =(current)=>{
+        return current.isAfter(this.state.FromDate);
+    };
+    fdate = {
+        name: "FromDate",
+        placeholder: "From Date",
+        required: true
+        
+    };
+    tdate = {
+        name: "ToDate",
+        placeholder: "To Date",
+        required: true
+    };
     render(){
         
          return (
             <div className="container">
             <h2>Edit The Quiz Details</h2>
             <br/><br/>
+            <h4>Assignment Availability</h4>
+            <h5>From {dateFormat(this.state.FromDate,"dd/mm/yyyy HH:MM:ss")} - To {dateFormat(this.state.ToDate,"dd/mm/yyyy HH:MM:ss")}</h5>
+            <br/>
             <div>
                 
             <form>
@@ -109,15 +144,16 @@ export default class QuizUpdate extends Component {
                 <div className="row g-3">
                     <div className="col-sm-3" id="datetimepicker1">
                             <label for="exampleInputEmail1" className="form-label">Quiz Availability</label>
-                            <input type="datetime-local" className="form-control" id="enddate" placeholder="To date" name="FromDate" min={this.state.cuDate}  value={this.state.FromDate} onChange={this.handleInputChange} required={true}/>
+                            <Datetime isValidDate={this.valid} dateFormat="DD-MM-YYYY"  inputProps={this.fdate} value={this.state.FromDate} onChange={this.handleFromDate} required={true}/>
                             <div id="emailHelp" className="form-text">From date (Unhide the quiz)</div>
                     </div>
                     <div className="col-sm-4">
                             <label for="exampleInputEmail1" className="form-label col-form-label-lg"></label>
-                            <input type="datetime-local" className="form-control" id="enddate" placeholder="To date" name="ToDate" min={this.state.FromDate} value={this.state.ToDate} onChange={this.handleInputChange} required={true}/>
+                            <Datetime isValidDate={this.tovalid} dateFormat="DD-MM-YYYY" selectsEnd inputProps={this.tdate} minDate={this.state.FromDate} onChange={this.handleInputChange} required={true}/>
                             <div id="emailHelp" className="form-text">To date (Expire the quiz)</div>
                     </div>
                 </div>
+                
                 <br/>
                 <div className="row g-3">
                     <div className="col-sm-7">

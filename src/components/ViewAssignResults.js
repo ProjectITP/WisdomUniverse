@@ -6,10 +6,12 @@ export default class QuizUpdate extends Component {
     
     constructor(props) {
         super(props);
+        //this.onChangeSearch = this.onChangeSearch.bind(this);
         this.state={
             Quiz:[],
             Attempts_Ass:[],
-            name:''
+            name:'',
+            Assid:this.props.match.params.id
             
         };
       }
@@ -20,9 +22,13 @@ export default class QuizUpdate extends Component {
         const req02=axios.get(`http://localhost:8070/assignment/${id}`);
 
         axios.all([req01,req02]).then(axios.spread((res1,res2) => {
+            const result = res1.data.filter((Insts) =>
+                      Insts.Assignment.includes(id)
+            )
             this.setState({
-                Attempts_Ass:res1.data,
-                name:res2.data.Assignment.name
+                Attempts_Ass:result,
+                name:res2.data.Assignment.name,
+    
                 // FromDate,
                 // ToDate
 
@@ -34,47 +40,8 @@ export default class QuizUpdate extends Component {
             });
             console.log(this.state.Attempts_Ass,this.state.name);
         }));
-
-            //this.readInsts();
         }
 
-    // readInsts(){
-    //     axios.get("http://localhost:8070/instructors").then((res) => {
-            
-    //         this.setState({
-    //             Instructor:res.data.existingInstructors
-    //         });
-    //         console.log(this.state.Instructor);
-    //     });
-    // }
-    // filterInst(Instructor,searchKey){
-    //     const result = Instructor.filter((Insts) =>
-    //       Insts.firstname.includes(searchKey)
-    //     )
-    //     this.setState({Instructor:result})
-    // }
-    // handleSearchInst = (e)=>{
-    //     const searchKey=e.currentTarget.value;
-  
-    //     axios.get("http://localhost:8070/instructors").then((res) => {
-    //         this.filterInst(res.data , searchKey)
-    //     });
-    // }
-
-    // filterData(Attempts_Ass,searchKey){
-    //     const result = Attempts_Ass.filter((Insts) =>
-    //       Insts.Instructor.includes(searchKey)
-    //     )
-    //     this.setState({Attempts_Ass:result})
-    // }
-    handleSearchArea = (e)=>{
-
-      const searchKey=e.currentTarget.value;
-
-      axios.get("http://localhost:8070/attemptsass/").then((res) => {
-          this.filterData(res.data , searchKey)
-      });
-    }
     deleteQuiz = (id)=>{
             if(window.confirm("Want to delete it?")){
             axios.delete(`http://localhost:8070/attemptsass/delete/${id}`).then((res)=>{

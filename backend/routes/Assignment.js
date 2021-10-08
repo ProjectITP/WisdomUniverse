@@ -6,11 +6,15 @@ let Assignment = require("../models/Assignment.js");
 router.route("/add").post((req,res)=>{
 
     const name =req.body.name;
+    const subject = req.body.subject;
+    const instructor = req.body.instructor;
     const FromDate=req.body.FromDate;
     const ToDate=req.body.ToDate;
 
     const newAssignment = new Assignment({
         name,
+        subject,
+        instructor,
         FromDate,
         ToDate
     })
@@ -33,9 +37,11 @@ router.route("/").get((req,res)=>{
 //URL = http://localhost:8070/assignment/update/61399387b941900cf8fe6412
 router.route("/update/:id").put(async(req,res)=>{
     let AssignmentId = req.params.id;
-    const {name, FromDate, ToDate} = req.body;
+    const {name, subject, instructor, FromDate, ToDate} = req.body;
     const updateAssignment = {
         name,
+        subject,
+        instructor,
         FromDate,
         ToDate
     }

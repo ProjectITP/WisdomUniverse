@@ -91,6 +91,7 @@ export default class UpdateQuizResults extends Component {
 
         axios.put(`http://localhost:8070/attemptsass/update/${id}`,updateres).then(()=>{
             alert("Results Updated")
+            window.location = `/i/viewassignresults/${Assignment}`;
             this.setState({
                 Student:"",
                 Subject:"",
