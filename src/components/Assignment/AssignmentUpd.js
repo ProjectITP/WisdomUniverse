@@ -1,41 +1,92 @@
-import React,{useEffect, useState} from "react"
+import React,{ Component } from "react"
 import axios from "axios"
 import background from './img/back6.jpg'
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
 import valid from "./validations/startdate.js"
 import dateFormat from "dateformat";
+import moment from "moment";
 
-export default function AssignmentUpd(props){
-    
-    const [name,setName] = useState("");
-    const [FromDate,setFromdate] = useState("");
-    const [ToDate,setTodate] = useState("");
+export default class AssignmentUpd extends Component{
 
-    useEffect(() => { 
-        const getall = ()=>{
-        const id = props.match.params.id
+    constructor(props) {
+        super(props);
+        this.state={
+            name:"",
+            subject:"",
+            instructor:"",
+            FromDate:"",
+            ToDate:""
+        };
+    }
 
-            axios.get(`http://localhost:8070/assignment/${id}`).then((res)=>{
-                //alert("Assignment Fetch")
-                console.log(res.data);
-                setName(res.data.Assignment.name);
-                setFromdate(res.data.Assignment.FromDate);
-                setTodate(res.data.Assignment.ToDate);
-            }).catch((err)=>{
-                alert(err);
-            })
-        }
-        getall();
-    },[]);
-    
-    var tovalid = function(current){
-        return current.isAfter(FromDate);
-    };
-    function sendData(e){
+
+    componentDidMount(){
+
         const id = this.props.match.params.id
+        //http://localhost:8070/Quiz/get/${id}
+        //http://localhost:8070/assignment/613ddc2eddc0bc5078269d14
+        // axios.get(`http://localhost:8070/Quiz/get/${id}`).then((res) => {
+        //     this.setState({
+        //         name:res.data.Quiz.name,
+        //         duration:res.data.Quiz.duration,
+        //         FromDate:res.data.Quiz.FromDate,
+        //         ToDate:dateFormat(res.data.Quiz.ToDate,"yyyy-mm-dd"),
+        //         Attempts:res.data.Quiz.Attempts
+        //         //  FromDate:res.data.Assignment.FromDate,
+        //         //  cuDate:new Date()
+        //     });
+        //     console.log(res.data);
+        //     // console.log(dateFormat(today,))
+        //     //console.log(dateFormat(res.data.Quiz.FromDate, "yyyy-mm-dd HH:mm:ss"))
+        // });
+        axios.get(`http://localhost:8070/assignment/${id}`).then((res)=>{
+            this.setState({
+                //alert("Assignment Fetch")
+                name:res.data.Assignment.name,
+                subject:res.data.Assignment.subject,
+                instructor:res.data.Assignment.instructor,
+                FromDate:res.data.Assignment.FromDate,
+                ToDate:res.data.Assignment.ToDate,
+            });
+            console.log(res.data)
+        });
+    }
 
-        axios.put(`http://localhost:8070/assignment/update/${id}`).then((res)=>{
+    handleInputChange=(e)=>{
+        this.setState({
+            ...this.state,
+            [e.target.name]:e.target.value
+        })
+    }
+
+    handleFromDate=(event)=>{
+        this.setState({...this.state, FromDate: event})
+    };
+    handleToDate=(event)=>{
+        this.setState({...this.state, ToDate: event}) 
+    };
+    sendData=(e)=>{
+        const id = this.props.match.params.id
+        const {name,subject,instructor,FromDate,ToDate} = this.state
+        const updass={
+            name:name,
+            subject:subject,
+            instructor:instructor,
+            FromDate:FromDate,
+            ToDate:ToDate
+        }
+
+        axios.put(`http://localhost:8070/assignment/update/${id}`,updass).then((res)=>{
+            this.setState({
+                //alert("Assignment Fetch")
+                name:"",
+                subject:"",
+                instructor:"",
+                FromDate:"",
+                ToDate:""
+                
+            });
             alert("Assignment Updated")
             console.log(res.data);
             window.location = '/i/assignment';
@@ -43,61 +94,83 @@ export default function AssignmentUpd(props){
             alert(err);
         })
     }
-    var tovalid = function(current){
-        return current.isAfter(FromDate);
+    valid = function(current) {
+        var yesterday = moment().add(1, 'hours');
+        return current.isAfter(yesterday);
+    }
+    tovalid =(current)=>{
+        return current.isAfter(this.state.FromDate);
     };
-    let fdate = {
+    fdate = {
         name: "FromDate",
-        placeholder: "From Date"
+        placeholder: "From Date",
+        required: true
         
     };
-    let tdate = {
+    tdate = {
         name: "ToDate",
-        placeholder: "To Date"
+        placeholder: "To Date",
+        required: true
     };
+    render(){
     return(
         <div style={{ backgroundImage: `url(${background})` , height: "100vh", backgroundSize:"cover"}}>
         <div className="container-sm assign">
             <h2>Assignment Update</h2>
             <br/><br/>
             <h4>Assignment Availability</h4>
-            <h5>From {dateFormat(FromDate,"dd/mm/yyyy HH:MM:ss")} - To {dateFormat(ToDate,"dd/mm/yyyy HH:MM:ss")}</h5>
+            <h5>From {dateFormat(this.state.FromDate,"dd/mm/yyyy HH:MM:ss")} - To {dateFormat(this.state.ToDate,"dd/mm/yyyy HH:MM:ss")}</h5>
             <br/>
             <div>
                 
-            {/* <form onSubmit={sendData}> */}
             <form>
                 <div class="row g-3">
                     <div class="col-sm-8">
                         <div class="mb-3 col">
                             <label for="exampleInputEmail1" class="form-label">Assignment Name</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" name="name" value={name}
-                            onChange={(e)=>{
-                                setName(e.target.value);
-                            }} />
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="name" value={this.state.name} onChange={this.handleInputChange} required={true}/>
                             <div id="emailHelp" class="form-text">Type a assignment name</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-sm-8">
+                        <div class="mb-3 col">
+                            <label for="exampleInputEmail1" class="form-label">Subject Name</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" value={this.state.subject} name="subject" onChange={this.handleInputChange} required={true}/>
+                            <div id="emailHelp" class="form-text">Type the subject name</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-sm-8">
+                        <div class="mb-3 col">
+                            <label for="exampleInputEmail1" class="form-label">Instructor Name</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="instructor" value={this.state.instructor} onChange={this.handleInputChange} required={true}/>
+                            <div id="emailHelp" class="form-text">Type the instructor name</div>
                         </div>
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col-sm-4">
                             <label for="exampleInputEmail1" class="form-label">Assignment Availability</label>
-                            <Datetime isValidDate={valid} dateFormat="DD-MM-YYYY"  inputProps={fdate} onChange={ e=>setFromdate(e)} value={FromDate}/>
+                            <Datetime isValidDate={this.valid} dateFormat="DD-MM-YYYY"  inputProps={this.fdate} value={this.state.FromDate} onChange={this.handleFromDate} required={true}/>
                             <div id="emailHelp" class="form-text">From date (Unhide the assignment)</div>
                     </div>
                    
                     <div class="col-sm-4">
                             <label for="exampleInputEmail1" class="form-label col-form-label-lg"></label>
-                            <Datetime isValidDate={tovalid} dateFormat="DD-MM-YYYY" selectsEnd inputProps={tdate} minDate={FromDate} onChange={ e=>setTodate(e)}/>
+                            <Datetime isValidDate={this.tovalid} dateFormat="DD-MM-YYYY" selectsEnd inputProps={this.tdate} minDate={this.state.FromDate} onChange={this.handleInputChange} required={true}/>
                             <div id="emailHelp" class="form-text">To date (Expire the assignment)</div>
                     </div>
                 </div>
                 <br/>
-                <button class="btn btn-outline-success btn-lg" role="submit">Update the Assignment</button>
+                <button class="btn btn-outline-success btn-lg" role="submit" onClick={this.sendData}>Update the Assignment</button>
             </form>
             </div>
             <br/>
         </div>
         </div>
     )
+    }
 }

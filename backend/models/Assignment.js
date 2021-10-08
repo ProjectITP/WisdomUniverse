@@ -7,9 +7,17 @@ const assignmentSchema = new Schema({
         type: String,
         required: true
     },
+    subject:{
+        type : String,
+        required: true
+    },
+    instructor:{
+        type : String,
+        required: true
+    },
     FromDate:{
         type: Date,
-        required: true,
+        required: true
     },
     ToDate:{
         type: Date,
