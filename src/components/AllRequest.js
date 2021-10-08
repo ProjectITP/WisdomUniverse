@@ -64,6 +64,7 @@ export default class AllRequest extends Component{
                     <div className="col-lg-3 mt-2 mb-2">
                         <input
                             className="form-control"
+                            style={{background:'#e5e6dc'}}
                             type="search"
                             placeholder="Search"
                             name="searchQuery"
@@ -73,11 +74,11 @@ export default class AllRequest extends Component{
                 </div>
                 &nbsp;
                 &nbsp;
-                <div class="card-header py-3">
-                    <p class="text-primary m-0 font-weight-bold">Requests info</p>
+                <div class="card-header py-3" style={{background:'LightGray'}}>
+                    <p class="text-primary m-0 font-weight-bold" style={{background:'LightGray'}}>Requests info</p>
                 </div>
         
-                <table className="table table-hover" style={{marginTop:'40px'}}>
+                <table className="table table-hover" style={{marginTop:'40px',background:'LightGray'}}>
                     <thead>
                         <tr>
                             <th scope="col">#</th>

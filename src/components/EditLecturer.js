@@ -32,7 +32,7 @@ export default class EditLecturer extends Component {
         e.preventDefault();
         const id = this.props.match.params.id;
 
-        const {firstname,lastname,dob,gender,address,nic,email,phoneno,hequalification,subject} = this.state;
+        const {firstname,lastname,dob,gender,address,nic,email,phoneno,hequalification,subject,password} = this.state;
 
         const data ={
             firstname:firstname,
@@ -44,7 +44,8 @@ export default class EditLecturer extends Component {
             email:email,
             phoneno:phoneno,
             hequalification:hequalification,
-            subject:subject
+            subject:subject,
+            password:password
         }
         console.log(data)
         axios.post("http://localhost:8070/instructor/save",data).then((res) =>{
@@ -61,7 +62,8 @@ export default class EditLecturer extends Component {
                         email:"",
                         phoneno:"",
                         hequalification:"",
-                        subject:""
+                        subject:"",
+                        password:""
                     }
                 )
             }
@@ -154,7 +156,7 @@ export default class EditLecturer extends Component {
                     <div class="col">
                         <div className="form-group" style={{marginBottom:'15px'}}>
                             <label style={{marginBottom:'5px'}} >Address</label>
-                                <input type="text" class="form-control" name="address" placeholder="Adress" value={this.state.address} onChange={this.handleInputChange} aria-label="Address"></input>
+                                <input type="text" class="form-control" name="address" placeholder="Adress" value={this.state.address} onChange={this.handleInputChange} aria-label="Address" readOnly></input>
                         </div>
                     </div>
                 
@@ -188,6 +190,12 @@ export default class EditLecturer extends Component {
                         <div className="form-group" style={{marginBottom:'15px'}}>
                             <label style={{marginBottom:'5px'}} >Email</label>
                                 <input type="text" class="form-control" name="email" placeholder="Email" value={this.state.email} onChange={this.handleInputChange} aria-label="Email"></input>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div className="form-group" style={{marginBottom:'15px'}}>
+                            <label style={{marginBottom:'5px'}} >Password</label>
+                                <input type="text" class="form-control" name="password" placeholder="Password" value={this.state.password} onChange={this.handleInputChange} aria-label="Password"></input>
                         </div>
                     </div>
                 </div>

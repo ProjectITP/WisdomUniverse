@@ -1,0 +1,8 @@
+.bannerr-image {
+    background-image: url('../src/instructor.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    height: 60%;
+    }

@@ -53,12 +53,9 @@ function Header() {
                             Instructor
                             </Link>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><Link class="dropdown-item" to="/instructor">Instructor</Link></li>
                                 <li><Link class="dropdown-item" to="/instructor">All Instructors</Link></li>
                                 <li><Link class="dropdown-item" to="/request">All Requests</Link></li>
                                 <li><Link class="dropdown-item" to="/register">Sign-up</Link></li>
-                                <li><Link class="dropdown-item" to="#">Update Instructor</Link></li>
-                                <li><Link class="dropdown-item" to="#">Add Instructor</Link></li>
                                 <li><Link class="dropdown-item" to="/reportgenerate">Report Generate</Link></li>                              
                             </ul>
                         </li>                        
@@ -151,6 +148,17 @@ function Header() {
                                 <li><a class="dropdown-item" href="/view">Contactus View</a></li>
                             </ul>
                         </li>
+
+
+
+                        <li class="nav-item dropdown">
+                            <Link class="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Apply as Instructor
+                            </Link>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><Link class="dropdown-item" to="/register">Apply</Link></li>                              
+                            </ul>
+                        </li> 
                     </ul>
                     {isLogged ? (
               studentLink()

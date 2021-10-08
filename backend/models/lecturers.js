@@ -41,6 +41,9 @@ const lecturerSchema = new mongoose.Schema({
     subject:{
         type:String,
         required:true
+    },
+    password:{
+        type:String
     }
 });
 

@@ -1,7 +1,16 @@
-import React, { Component } from 'react';
+import React from "react";
+import ReactToPrint from "react-to-print";
+
 import axios from 'axios';
 
-export default class GenerateReport extends Component{
+const thStyle = {
+  fontFamily: "Anton",
+  fontWeight: "normal",
+  fontStyle: "normal"
+};
+
+class ComponentToPrint extends React.Component {
+
   constructor(props){
     super(props);
 
@@ -28,16 +37,46 @@ export default class GenerateReport extends Component{
     });
   }
 
-render() {
-  return(
+  
+  filterData(instructors,searchKey){
+    const result = instructors.filter((instructor) =>
+    instructor.firstname.toLowerCase().includes(searchKey)||
+    instructor.lastname.toLowerCase().includes(searchKey)
+    )
+    this.setState({instructors:result})
+  }
+
+  handleSearchArea = (e) =>{
+    const searchKey=e.currentTarget.value;
+
+    axios.get("http://localhost:8070/instructors").then(res =>{
+      if(res.data.success){
+        this.filterData(res.data.existingInstructors, searchKey)
+  
+      }
+    })
+  }
+  
+  render() {
+    return (
       <div className="container">
-        <div className="row">
+          <div className="row">
           <div className="col-lg-9 mt-2 mb-2">
-            <h4>All Instructors</h4>
+            <br></br><br></br>
+            <h4>All Instructors Report</h4>
+          </div>
+          <div className="col-lg-3 mt-2 mb-2">
+            <input
+            className="form-control"
+            style={{background:'#e5e6dc'}}
+            type="search"
+            placeholder="Search"
+            name="searchQuery"
+            onChange={this.handleSearchArea}></input>
           </div>
         </div>
         
-        <table className="table table-hover" style={{marginTop:'40px'}}>
+        <table className="table table-hover" style={{marginTop:'40px',background:'LightGray'}}>
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -73,8 +112,34 @@ render() {
             ))}
           </tbody>
         </table>
+
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <h5 style={{color:"red"}}>Total Number of Instructors : {this.state.instructors.length}</h5>
         
     </div>
-  )
+    );
+  }
 }
+
+
+
+class Example extends React.Component {
+  render() {
+    return (
+      <div style={{marginTop:'50px', marginLeft:'40px'}}>
+        <ReactToPrint
+          trigger={() => <button style={{background:'#d0d1a3'}}>Print Report</button>}
+          content={() => this.componentRef}
+        />
+        <ComponentToPrint ref={(el) => (this.componentRef = el)} />
+      </div>
+    );
+  }
 }
+
+
+export default Example;

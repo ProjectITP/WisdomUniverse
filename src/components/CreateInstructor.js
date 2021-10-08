@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import '../instructor.css';
 
 
 export default class CreateInstructor extends Component {
@@ -67,6 +68,7 @@ export default class CreateInstructor extends Component {
     }
     render() {
         return (
+            <div className='bannerr-image'>
         <div className="col-md-8 mt-4 mx-auto">
             <div class="shadow-lg p-3 mb-5 bg-white rounded">
             <div class="card-header py-3">
@@ -107,6 +109,8 @@ export default class CreateInstructor extends Component {
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}} >DOB</label>
                             <input type="date" 
+                                //min="2020-10-05" 
+                                max="2021-10-05"
                                 class="datepicker" 
                                 data-date-format="mm/dd/yyyy" 
                                 className="form-control"
@@ -226,8 +230,30 @@ export default class CreateInstructor extends Component {
                             Send Application 
                         </button>
                     </center>
+
+                   
                 </form> 
+                <center>    
+                        <button className="btn btn-danger" style={{marginTop:'15px', width: '100%'}}
+                        onClick={(e) => {
+                            this.setState({
+                                firstname:"Sanjaya",
+                                lastname:"Kumbalathara",
+                                dob:"1988-02-28",
+                                gender:"Male",
+                                address:"Kaluthara",
+                                nic:"889878765V",
+                                email:"sanjaya@gmail.com",
+                                phoneno:"0712345768",
+                                hequalification:"Masters Degree",
+                                subject:"Biology"
+                            });
+                        }}>
+                            Demo
+                        </button>
+                    </center>
             </div>
+        </div>
         </div>
         );
         }
