@@ -9,7 +9,7 @@ const thStyle = {
   fontStyle: "normal"
 };
 
-class ComponentToPrint extends React.Component {
+class GenerateReportInstructor extends React.Component {
 
   constructor(props){
     super(props);
@@ -135,7 +135,7 @@ class Example extends React.Component {
           trigger={() => <button style={{background:'#d0d1a3'}}>Print Report</button>}
           content={() => this.componentRef}
         />
-        <ComponentToPrint ref={(el) => (this.componentRef = el)} />
+        <GenerateReportInstructor ref={(el) => (this.componentRef = el)} />
       </div>
     );
   }
