@@ -49,6 +49,7 @@ export default class CreateInstructor extends Component {
         console.log(data)
         axios.post("http://localhost:8070/lecturer/save",data).then((res) =>{
             if(res.data.success){
+                alert("Your Data Added Successfully")
                 this.setState(
                     {
                         firstname:"",
