@@ -155,6 +155,7 @@ export default class CreateInstructor extends Component {
                         className="form-control"
                         name="nic"
                         placeholder="Enter NIC"
+                        pattern="[0-9]{9}[vVxX]" 
                         value={this.state.nic}
                         onChange={this.handleInputChange} required/>
                     </div>

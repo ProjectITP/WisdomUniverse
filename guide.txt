@@ -19,6 +19,7 @@ npm install react-pdf
 npm install --save react-to-print
 
 npm i pdf-creator-node --save
+
+npm i react-to-print
 /
 
-npm react
