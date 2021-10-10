@@ -171,6 +171,33 @@ export default class UpdateQuizResults extends Component {
                 </div>
                 
                 <div className="row g-3">
+                    <div className="col-sm-3">
+                        <div className="mb-3 col">
+                            <label for="exampleInputEmail1" className="form-label">Plagarism Score</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <div id="emailHelp" className="form-text"></div>
+                        </div>
+                    </div>
+                    <div className="col-sm-3">
+                        <div className="mb-3 col">
+                            <label for="exampleInputEmail1" className="form-label">Plagarism Score</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <div id="emailHelp" className="form-text"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="row g-3">
                     <div className="col-sm-7">
                         <div className="mb-3 col">
                             <label for="exampleInputEmail1" className="form-label">Marks</label>

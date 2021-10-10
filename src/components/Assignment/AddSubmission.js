@@ -15,38 +15,48 @@ export default function AddSubmission(props){
     const [Student,setStudent] = useState("");
     const [Assignment,setAssignment] = useState(props.match.params.id);
     const [AttemptDate,setAttemptDate] = useState(Date.now);
-    const [Subfile,setfilename]=useState("");
+    const [file, setFile] = useState(null);
 
     //console.log(Assignment);
 
-    const onChangeFile = (e) =>{
-        setfilename(e.target.files[0]);
+    const onChangeFile=(e)=>{
+        //console.log(e.target.files[0])
+        //const uploadedFile = e.target.files[0];
+        // const uploadedFile = files;
+        // setFile(uploadedFile)
+        // setFile(uploadedFile);
+        setFile(e.target.files[0])
+        console.log(e.target.files[0])
     }
 
     function sendData(e){
+    if (file) {
+        const config= {
+            headers:{
+              'content-type':'multipart/form-data',
+            }
+          };
         e.preventDefault();
 
         const formData = new FormData();
 
-        const config= {
-            headers:{
-              'content-type':'multipart/formData'
-            }
-          };
-
+        formData.append('file',file);
         formData.append("Student",Student);
         formData.append("Assignment",Assignment);
         formData.append("AttemptDate",AttemptDate);
-        formData.append("Subfile",Subfile);
+        
 
         setAttemptDate(Date.now);
-
-        axios.post("http://localhost:8070/attemptsass/add",formData).then(()=>{
+        axios.post("http://localhost:8070/attemptsass/add",formData,config).then(()=>{
             alert("Assignment Added")
             window.location = '/i/assignment';
         }).catch((err)=>{
             alert(err);
         })
+    }
+    else{
+        alert("Errrrorrr!!!!")
+    }
     }
     // var tovalid = function(current){
     //     return current.isAfter(FromDate);
@@ -67,13 +77,13 @@ export default function AddSubmission(props){
             <br/><br/>
             <div>
                 
-            <form encType="multipart/form-data" onSubmit={sendData}>
+            <form enctype="multipart/form-data" onSubmit={sendData} >
                 <div class="row g-3">
                     <div class="col-sm-8">
                         <div class="mb-3 col">
                             <label for="exampleInputEmail1" class="form-label">Assignment</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" name="Assignment"
-                            value={Assignment} />
+                            value={Assignment} disabled={true}/>
                             <div id="emailHelp" class="form-text">Type a assignment name</div>
                         </div>
                     </div>
@@ -95,7 +105,7 @@ export default function AddSubmission(props){
                     <div class="col-sm-8">
                         <div class="mb-3 col">
                             <label for="exampleInputEmail1" class="form-label">Assignment Name</label>
-                            <input type="file" class="form-control" id="exampleInputEmail1" filename="filename"
+                            <input type="file" class="form-control" name="file" id="exampleInputEmail1" filename="filename"
                             onChange={onChangeFile} />
                             <div id="emailHelp" class="form-text">Type a assignment name</div>
                         </div>

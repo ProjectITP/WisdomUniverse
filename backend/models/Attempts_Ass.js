@@ -72,11 +72,19 @@ const Attempts_AssSchema = new Schema({
         required: true,
         default:'false'
     },
-    Subfile:{
+    file_name: {
         type: String,
-        default:""
+        required: true
+    },
+    file_path: {
+        type: String,
+        required: true
+    },
+    file_mimetype: {
+        type: String,
+        required: true
     }
-})
+},{timestamps: true});
 
 const Attempts_Ass = mongoose.model("Attempts_Ass",Attempts_AssSchema);
 

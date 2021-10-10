@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import GenerateReport from './Assignment/report/GenerateResReport';
 //mport { Bar } from 'react-chartjs-2';
+import './Assignment/css/results2.css'
+import background from './Assignment/img/back10.jpg'
 
 export default class QuizUpdate extends Component {
     
@@ -13,6 +15,7 @@ export default class QuizUpdate extends Component {
             Quiz:[],
             Attempts_Ass:[],
             name:'',
+            PublishStatus:'',
             Assid:this.props.match.params.id,
             labal:[]
             
@@ -31,6 +34,7 @@ export default class QuizUpdate extends Component {
             this.setState({
                 Attempts_Ass:result,
                 name:res2.data.Assignment.name,
+                PublishStatus:res2.data.Assignment.PublishStatus,
     
                 // FromDate,
                 // ToDate
@@ -72,59 +76,55 @@ export default class QuizUpdate extends Component {
     
     render(){
         
+        if (this.state.PublishStatus===true) {
          return (
-            <div className="container">
+             <div style={{ backgroundImage: `url(${background})`  ,height: "100vh", backgroundSize:"cover"}}>
+            <div className="container results" >
             <h2>{this.state.name} Results</h2><br/><br/>
             <h3>Assignment Details</h3>
-            <div class="row justify-content-end">
-                <div class="col-4">
-                    <Link to="/i/viewresults" onClick={() => this.GenerateRepo()} class="btn btn-secondary btn-lg" role="button" >Generate Report</Link>
-                </div>
-            </div>
             {/* <h6>Duration:{this.state.ToDate}</h6> */}
 
             <br/><br/>
             <div>
             
-            {/* <table>
-                <tbody>
-                    {this.state.Instructor.map((inst)=>(
-                        <tr>
-                            <td>
-                                {inst.firstname}
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table> */}
-            <table className="table">
+            <table className="table .col-md-8">
                 <thead>
                     <th>Student</th>
-                    <th>Marking Status</th>
-                    <th>Instructor</th>
-                    <th>Plagarism Score</th>
+                    <th>Pass Status</th>
                     <th>Marks</th>
                 </thead>
                 <tbody>
                     {this.state.Attempts_Ass.map((attempts_Ass)=>(
                             <tr class="table-secondary">
                                 <td>{attempts_Ass.Student} </td>
-                                <td>{attempts_Ass.MarkingStatus}</td>
-                                <td>{attempts_Ass.Instructor}</td>
-                                <td>{attempts_Ass.PlagarismScore}</td>
+                                <td>{attempts_Ass.Status}</td>
                                 <td>{attempts_Ass.Marks}</td>
-                                <td>
-                                    <Link className="btn btn-warning" to={`/i/updateassignresults/${attempts_Ass._id}`} role="button">Update the results</Link>
-                                </td>
-                                <td>
-                                    <Link className="btn btn-outline-danger" onClick={() => this.deleteQuiz((attempts_Ass._id))} role="button">Delete the results</Link>
-                                </td>
                             </tr>
                     ))}
                 </tbody>
             </table>
             </div>
         </div>
+        </div>
         )
     }
+    else{
+        return(
+            <div style={{ backgroundImage: `url(${background})`  ,height: "100vh", backgroundSize:"cover"}}>
+            <div className="container results" >
+            <h2>{this.state.name} Results</h2><br/><br/>
+            
+            {/* <h6>Duration:{this.state.ToDate}</h6> */}
+
+            <br/><br/>
+            <div>
+            
+            <h1>Coming Soon...</h1>
+            </div>
+        </div>
+        </div>
+        );
+    }
+    }
+    
 }

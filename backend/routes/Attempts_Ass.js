@@ -1,63 +1,87 @@
 const router = require("express").Router();
-const multer = require("multer");
-const mongoose = require("mongoose")
-const path = require('path')
+const multer = require("multer");  
 let Attempts_Ass = require("../models/Attempts_Ass.js");
+//let upload = require("../uploads/")
 
 const storage = multer.diskStorage({
     destination:(req,file,callback)=>{
-        callback(null,'./uploads/');
+        callback(null,'uploads');
     },
-    filename:(req,file,callback)=>{
-        callback(null,file.originalname);
-    }
+    filename: (req,file,callback)=>{
+        callback(null,new Date().toISOString().replace(/:/g,'-')+ '-' + file.originalname);
+    },
+    // fileFilter:(req,file,cb)=>{
+
+    //     let pattern = /jpg|png|svg/;
+    //     if (file.mimetype ===) {
+    //         cb (null, true);
+    //       } else {
+    //         cb('Error: not a valid file');
+    //       }
+    // },
 })
 const upload = multer({storage:storage});
 
 //URL = http://localhost:8070/attemptsass/add
-router.route("/add",upload.single('Subfile')).post((req,res)=>{
+router.route("/add",upload.single('file')).post( (req,res)=>{
 
-    const Student =req.body.Student;
-    const Subject=req.body.Subject;
-    const Instructor=req.body.Instructor;
-    const Assignment=req.body.Assignment;
-    const AttemptDate=req.body.AttemptDate;
-    const MarkingStatus=req.body. MarkingStatus;
-    const PublicationStatus=req.body.PublicationStatus;
-    const PlagarismStatus=req.body.PlagarismStatus;
-    const PlagarismScore=req.body.PlagarismScore;
-    const Marks=req.body.Marks;
-    const Grade=req.body.Grade;
-    const Status=req.body.Status;
-    const RescrutinyRequest=req.body.escrutinyRequest;
-    const RescrutinyNotification=req.body.RescrutinyNotification;
-    const PublishStatus=req.body.PublishStatus;
-    const Subfile=req.file.path;
+    try{
+        const file=req.file;
+        console.log(file);
+        res.status(201).send('File uploaded');
+    }catch{
+        res.status(404).send(error.message);
+    }
+
+    // const Student =req.body.Student;
+    // const Subject=req.body.Subject;
+    // const Instructor=req.body.Instructor;
+    // const Assignment=req.body.Assignment;
+    // const AttemptDate=req.body.AttemptDate;
+    // const MarkingStatus=req.body. MarkingStatus;
+    // const PublicationStatus=req.body.PublicationStatus;
+    // const PlagarismStatus=req.body.PlagarismStatus;
+    // const PlagarismScore=req.body.PlagarismScore;
+    // const Marks=req.body.Marks;
+    // const Grade=req.body.Grade;
+    // const Status=req.body.Status;
+    // const RescrutinyRequest=req.body.escrutinyRequest;
+    // const RescrutinyNotification=req.body.RescrutinyNotification;
+    // const PublishStatus=req.body.PublishStatus;
+    //const file = req.file; 
+    
+        
+    
+    // const file_path = req.file.path;
+    // const file_mimetype = req.file.mimetype;
+    //console.log(req.file.path)
 
 
-    const newAttempts_Ass = new Attempts_Ass({
-        Student,
-        Subject,
-        Instructor,
-        Assignment,
-        AttemptDate,
-        MarkingStatus,
-        PublicationStatus,
-        PlagarismStatus,
-        PlagarismScore,
-        Marks,
-        Grade,
-        Status,
-        RescrutinyRequest,
-        RescrutinyNotification,
-        PublishStatus
-    })
+    // const newAttempts_Ass = new Attempts_Ass({
+    //     Student,
+    //     Subject,
+    //     Instructor,
+    //     Assignment,
+    //     AttemptDate,
+    //     MarkingStatus,
+    //     PublicationStatus,
+    //     PlagarismStatus,
+    //     PlagarismScore,
+    //     Marks,
+    //     Grade,
+    //     Status,
+    //     RescrutinyRequest,
+    //     RescrutinyNotification,
+    //     PublishStatus,
+    //     file_path,
+    //     file_mimetype
+    // })
 
-    newAttempts_Ass.save().then(()=>{
-        res.json("Attempts_Ass added")
-    }).catch((err)=>{
-        console.log(err);
-    })
+    // newAttempts_Ass.save().then(()=>{
+    //     res.json("Attempts_Ass added")
+    // }).catch((err)=>{
+    //     console.log(err);
+    // })
 })
 
 //URL = http://localhost:8070/attemptsass/

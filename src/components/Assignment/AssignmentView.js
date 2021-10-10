@@ -5,6 +5,7 @@ import background from './img/back6.jpg'
 import './css/assign.css'
 import { format } from "date-fns";
 import pdf from "pdf-creator-node";
+import GeneratePDFAll from './report/GenerateAssReport';
 
 
 export default function ViewAssignment() {
@@ -90,7 +91,7 @@ export default function ViewAssignment() {
             <center><h2>Assignments</h2></center>
             <div class="row justify-content-end">
                 <div class="col-4">
-                    <Link onClick={generate} class="btn btn-warning btn-lg" role="button" >Generate Report</Link>
+                    <Link to="/i/assignment" onClick={() => GeneratePDFAll(Assignment)} class="btn btn-warning btn-lg" role="button" >Generate Report</Link>
                 </div>
             </div>
                

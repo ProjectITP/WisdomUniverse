@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from "react"
 import {Link} from 'react-router-dom'
 import axios from "axios"
-import background from './Assignment/img/back10.jpg'
+import background from './Assignment/img/back7.jpg'
 import './Assignment/css/results.css'
 
 export default function ViewResults() {
@@ -33,7 +33,7 @@ export default function ViewResults() {
     
     return(
         <div style={{ backgroundImage: `url(${background})` , backgroundSize:"cover"}}>
-            <div className="container results shadow my-3 p-3 rounded bg-dark bg-gradient text-white">
+            <div className="container results">
             <br/>
 
             <h2>Students Results</h2>
@@ -44,7 +44,7 @@ export default function ViewResults() {
                     <ul>
                         <div class="row g-3">
                             <div class="col-sm-2">
-                                <h5><Link to={`/i/viewquizresults/${Quiz._id}`} style={{textDecoration:'none' , color:'white', "&:hover":{color: '#ed1212'}}}>{Quiz.name}</Link></h5>
+                                <h5><Link to={`/i/viewquizresults/${Quiz._id}`} style={{textDecoration:'none'}}>{Quiz.name}</Link></h5>
 
                             </div>
                         </div>
@@ -56,7 +56,7 @@ export default function ViewResults() {
                     <ul>
                         <div class="row g-3">
                             <div class="col-sm-2">
-                                <h5><Link to={`/i/viewassignresults/${Ass._id}`} style={{textDecoration:'none'}}>{Ass.name}</Link></h5>
+                                <h5><Link to={`/s/viewassignresults/${Ass._id}`} style={{textDecoration:'none'}}>{Ass.name}</Link></h5>
 
                             </div>
                         </div>
