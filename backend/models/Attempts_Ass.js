@@ -21,6 +21,7 @@ const Attempts_AssSchema = new Schema({
     AttemptDate:{
         type : Date,
         required: true
+        
     },
     MarkingStatus:{
         type : String,
