@@ -38,12 +38,14 @@ router.route("/").get((req,res)=>{
 router.route("/update/:id").put(async(req,res)=>{
     let AssignmentId = req.params.id;
     const {name, subject, instructor, FromDate, ToDate} = req.body;
+    const PublishStatus = Boolean(req.body.PublishStatus);
     const updateAssignment = {
         name,
         subject,
         instructor,
         FromDate,
-        ToDate
+        ToDate,
+        PublishStatus
     }
 
     await Assignment.findByIdAndUpdate(AssignmentId,updateAssignment)

@@ -22,6 +22,10 @@ const assignmentSchema = new Schema({
     ToDate:{
         type: Date,
         required: true
+    },
+    PublishStatus:{
+        type: Boolean,
+        default:false
     }
 })
 

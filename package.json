@@ -21,6 +21,8 @@
     "form-data": "^4.0.0",
     "googleapis": "^85.0.0",
     "jsonwebtoken": "^8.5.1",
+    "jspdf": "^2.4.0",
+    "jspdf-autotable": "^3.5.20",
     "moment": "^2.29.1",
     "mongoose": "^5.13.9",
     "mongoose-date-format": "^1.2.0",
@@ -38,6 +40,7 @@
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "react-select": "^5.1.0",
     "react-to-print": "^2.13.0",
     "redux": "^4.1.1",
     "web-vitals": "^1.1.2"

@@ -6,9 +6,15 @@ import "react-datetime/css/react-datetime.css";
 import valid from "./validations/startdate.js"
 import dateFormat from "dateformat";
 import moment from "moment";
+import Select from 'react-select';
 
+
+const options = [
+    { value: 'true', label: 'Publish' },
+    { value: 'false', label: 'Not Publish' }
+  ];
 export default class AssignmentUpd extends Component{
-
+     
     constructor(props) {
         super(props);
         this.state={
@@ -16,7 +22,8 @@ export default class AssignmentUpd extends Component{
             subject:"",
             instructor:"",
             FromDate:"",
-            ToDate:""
+            ToDate:"",
+            PublishStatus:""
         };
     }
 
@@ -48,17 +55,32 @@ export default class AssignmentUpd extends Component{
                 instructor:res.data.Assignment.instructor,
                 FromDate:res.data.Assignment.FromDate,
                 ToDate:res.data.Assignment.ToDate,
+                PublishStatus:res.data.Assignment.PublishStatus
             });
             console.log(res.data)
         });
     }
 
-    handleInputChange=(e)=>{
+    // handleInputChange=(e)=>{
+    //     this.setState({
+    //         ...this.state,
+    //         [e.target.name]:e.target.value
+    //     })
+    // }
+    handleInputChange = (e) =>{
+        const {name,value} = e.target;
+
         this.setState({
             ...this.state,
-            [e.target.name]:e.target.value
+            [name]:value
         })
     }
+    handleChange = (selectedOption) => {
+        this.setState({ 
+            PublishStatus: selectedOption
+        });
+        console.log(`Option selected:`, selectedOption);
+    };
 
     handleFromDate=(event)=>{
         this.setState({...this.state, FromDate: event})
@@ -68,13 +90,14 @@ export default class AssignmentUpd extends Component{
     };
     sendData=(e)=>{
         const id = this.props.match.params.id
-        const {name,subject,instructor,FromDate,ToDate} = this.state
+        const {name,subject,instructor,FromDate,ToDate, PublishStatus} = this.state
         const updass={
             name:name,
             subject:subject,
             instructor:instructor,
             FromDate:FromDate,
-            ToDate:ToDate
+            ToDate:ToDate,
+            PublishStatus:PublishStatus,
         }
 
         axios.put(`http://localhost:8070/assignment/update/${id}`,updass).then((res)=>{
@@ -84,7 +107,8 @@ export default class AssignmentUpd extends Component{
                 subject:"",
                 instructor:"",
                 FromDate:"",
-                ToDate:""
+                ToDate:"",
+                PublishStatus:""
                 
             });
             alert("Assignment Updated")
@@ -113,6 +137,7 @@ export default class AssignmentUpd extends Component{
         required: true
     };
     render(){
+        // const { selectedOption } = this.state;
     return(
         <div style={{ backgroundImage: `url(${background})` , height: "100vh", backgroundSize:"cover"}}>
         <div className="container-sm assign">
@@ -163,6 +188,27 @@ export default class AssignmentUpd extends Component{
                             <Datetime isValidDate={this.tovalid} dateFormat="DD-MM-YYYY" selectsEnd inputProps={this.tdate} minDate={this.state.FromDate} onChange={this.handleInputChange} required={true}/>
                             <div id="emailHelp" class="form-text">To date (Expire the assignment)</div>
                     </div>
+                </div>
+                <div class="row g-3">
+                <div class="col-sm-8">
+                <label for="exampleInputEmail1" class="form-label col-form-label-lg">Publication Status: <b>{this.state.PublishStatus.toString()}</b></label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="PublishStatus" value={this.state.PublishStatus} onChange={this.handleInputChange} />
+                {/* <Select value={this.state.PublishStatus} onChange={this.handleChange} options={options}/> */}
+                {/* <select class="form-select" value={this.state.PublishStatus} name="PublishStatus" onChange={this.handleInputChange}  aria-label="Default select example">
+                    <option>true</option>
+                    <option>false</option>
+                </select> */}
+                {/* <select name="gender" 
+                        style={{width:'400px',height:'34px'}}
+                        required
+                            value={this.state.gender}
+                            onChange={this.handleInputChange}>
+                            <option>Select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select> */}
+                
+                </div>
                 </div>
                 <br/>
                 <button class="btn btn-outline-success btn-lg" role="submit" onClick={this.sendData}>Update the Assignment</button>

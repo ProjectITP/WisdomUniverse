@@ -19,6 +19,10 @@ npm install react-pdf
 npm install --save react-to-print
 
 npm i pdf-creator-node --save
+
+npm install jspdf --save
+npm i jspdf-autotable
+npm i react-select
 /
 
 npm react

@@ -8,6 +8,8 @@ import {
 } from "./redux/actions/authAction";
 
 
+import ViewStdResults from './components/ViewStdResults';
+import ViewStdAssignResults from './components/ViewStdAssignResults';
 import ViewResults from './components/ViewResults';
 import ViewQuizResults from './components/ViewQuizResults';
 import UpdateQuizResults from './components/UpdateQuizResults';
@@ -226,6 +228,8 @@ function App() {
           <Route path="/i/updateresults/:id" exact component={UpdateQuizResults}/>
           <Route path="/i/viewassignresults/:id" exact component={ViewAssignResults}/>
           <Route path="/i/updateassignresults/:id" exact component={UpdateAssignResults}/>
+          <Route path="/s/viewresults" exact component={ViewStdResults}/>
+          <Route path="/s/viewassignresults/:id" exact component={ViewStdAssignResults}/>
           
           
     <Footer/>
