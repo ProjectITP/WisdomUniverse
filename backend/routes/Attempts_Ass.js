@@ -5,10 +5,10 @@ let Attempts_Ass = require("../models/Attempts_Ass.js");
 
 const storage = multer.diskStorage({
     destination:(req,file,callback)=>{
-        callback(null,'uploads');
+        callback(null,'uploads/');
     },
     filename: (req,file,callback)=>{
-        callback(null,new Date().toISOString().replace(/:/g,'-')+ '-' + file.originalname);
+        callback(null,new Date() + file.originalname);
     },
     // fileFilter:(req,file,cb)=>{
 

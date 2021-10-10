@@ -192,11 +192,12 @@ export default class AssignmentUpd extends Component{
                 <div class="row g-3">
                 <div class="col-sm-8">
                 <label for="exampleInputEmail1" class="form-label col-form-label-lg">Publication Status: <b>{this.state.PublishStatus.toString()}</b></label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="PublishStatus" value={this.state.PublishStatus} onChange={this.handleInputChange} />
                 {/* <Select value={this.state.PublishStatus} onChange={this.handleChange} options={options}/> */}
-                <select class="form-select" value={this.state.PublishStatus} name="PublishStatus" onChange={this.handleInputChange}  aria-label="Default select example">
+                {/* <select class="form-select" value={this.state.PublishStatus} name="PublishStatus" onChange={this.handleInputChange}  aria-label="Default select example">
                     <option>true</option>
                     <option>false</option>
-                </select>
+                </select> */}
                 {/* <select name="gender" 
                         style={{width:'400px',height:'34px'}}
                         required
