@@ -33,6 +33,10 @@ const subjectSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    enrollmentKey:{
+        type:String,
+        required:false
+    }
 });
 
 module.exports = mongoose.model('Subjects',subjectSchema);

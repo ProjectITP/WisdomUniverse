@@ -55,6 +55,14 @@ export default class CreateSubject extends Component {
     return true;
 };
 
+   datePicker = () => {
+    const date = new Date();
+    const dd = String(date.getDate()).padStart(2, "0");
+    const mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0
+    const yyyy = date.getFullYear();
+    return yyyy + "-" + mm + "-" + dd;
+};
+
   onSubmit = (e) =>{
 
     e.preventDefault();
@@ -96,30 +104,44 @@ export default class CreateSubject extends Component {
     })
   }
 
-
-
   render(){ 
     return(
-        <div class="container">
-        <h4 className="subject-h4" style={{textAlign:'center'}}>Subject Profile</h4>
-        <div class="container-fluid testbox">
-            
+        <div class="container-fluid upload-background">
+        <div class="container testbox">            
             <form className="forms needs-validation" style={{position:'static'}} novalidate>
-            <div className="form-group item" style={{marginBottom:'15px'}}>
+            <h4 className="subject-h4" style={{textAlign:'center'}}>Subject Profile</h4>
+
+            
+            <button className="btn btn-outline-primary" type="submit" style={{marginLeft:'900px'}} 
+                onClick={(e) =>{
+                    this.setState({
+                        subjectName:"Maths",
+                        instructorName:"Mr.K.Dissanayake",
+                        contNumber:"0713589652",        
+                        startDate:"10/10/2021",
+                        duration:"3 hours",
+                        shedule:"4.00pm-6.00pm",
+                        fee:"Rs.5000",
+                        aboutClass:"This is an online zomm class",                       
+                    });
+                }}>Demo
+                </button>
+   
+            <div className="form-group sitem" style={{marginBottom:'15px'}}>
                     <p style={{marginBottom:'5px'}} >Subject Name:<span class="required">*</span></p>
                     <input type="text" className="position-item" name="subjectName" placeholder="Enter subject Name"
                         value={this.state.subjectName} onChange={this.handleInputChange} required/>
                     <div style={{fontSize:12, color:"red"}}>{this.state.subjectError}</div>    
                 </div>
 
-                <div className="form-group item" style={{marginBottom:'15px'}}>
+                <div className="form-group sitem" style={{marginBottom:'15px'}}>
                     <p style={{marginBottom:'5px'}}>Instructor Name:<span class="required">*</span></p>  {/*use value atribute to set name*/}
                     <input type="text" className="position-item" name="instructorName" placeholder="Enter Instructor Name"
                         value={this.state.instructorName} onChange={this.handleInputChange} required/>
                     <div style={{fontSize:12, color:"red"}}>{this.state.instructorError}</div> 
                 </div>
 
-                <div className="form-group item" style={{marginBottom:'15px'}}>
+                <div className="form-group sitem" style={{marginBottom:'15px'}}>
                     <p style={{marginBottom:'5px'}}>Contact Number:<span class="required">*</span></p>
                     <input type="tel" className="position-item" name="contNumber" placeholder="Enter Contact Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         value={this.state.contNumber} onChange={this.handleInputChange} required/>
@@ -128,14 +150,14 @@ export default class CreateSubject extends Component {
                 
 
                 <div class="row position-item">
-                    <div class="col item"  style={{marginBottom:'15px'}}>
-                    <p style={{marginBottom:'5px'}}>Starting Date of the Class:</p>
-                        <input type="date" className="position-item" name="startDate" placeholder="Enter Starting Date"
-                            value={this.state.startDate} onChange={this.handleInputChange}/>
-                        <i class="fas fa-calendar-alt"></i>&nbsp;
+                    <div class="col sitem"  style={{marginBottom:'15px'}}>
+                    <p style={{marginBottom:'5px'}}>Starting Date of the Class:</p>                      
+                        <div><input type="date" name="date" className="col-3" name="startDate" placeholder="Enter Starting Date" style={{width:'90%'}}
+                            value={this.state.startDate} onChange={this.handleInputChange} min={this.datePicker()}/>  &nbsp;<i class="far fa-calendar-alt fa-lg"></i>
+                        </div>
                     </div>
 
-                    <div class="col item"  style={{marginBottom:'15px'}}>
+                    <div class="col sitem"  style={{marginBottom:'15px'}}>
                     <p style={{marginBottom:'5px'}}>Duration of the Class:</p>
                         <input type="String" className="position-item" name="duration" placeholder="Enter Duration" 
                             value={this.state.duration} onChange={this.handleInputChange}/>
@@ -144,31 +166,26 @@ export default class CreateSubject extends Component {
                 
 
                 <div class="row position-item">
-                    <div class="col item"  style={{marginBottom:'15px'}}>
+                    <div class="col sitem"  style={{marginBottom:'15px'}}>
                     <p style={{marginBottom:'5px'}}>Shedule:</p>
                     <input type="String" className="position-item" name="shedule" placeholder="Enter Shedule"
                             value={this.state.shedule} onChange={this.handleInputChange}/>
                     </div>
 
-                    <div class="col item"  style={{marginBottom:'15px'}}>
+                    <div class="col sitem"  style={{marginBottom:'15px'}}>
                     <p style={{marginBottom:'5px'}}>Class Fee:</p>
                         <input type="String" className="position-item" name="fee" placeholder="Enter Class Fee" 
                             value={this.state.fee} onChange={this.handleInputChange}/>
                     </div>
                 </div>
 
-                <div className="form-group item" style={{marginBottom:'15px'}}>
+                <div className="form-group sitem" style={{marginBottom:'15px'}}>
                     <p style={{marginBottom:'5px'}}>About Class:</p>
                     <div class="container-fluid">
                     <textarea className="position-item" name="aboutClass" value={this.state.aboutClass} onChange={this.handleInputChange} rows={5} cols={85} />
                     </div>
                 </div>
 
-                {/*<div className="form-group item" style={{marginBottom:'15px'}}>
-                    <p>Advertisement:</p>                    
-                    <input type="file" name="file" accept="file/*"/>
-                    <input type="text" name="providing"/>
-                </div>*/}
                 <button className="sbutton btn-block" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
                     <i className="far fa-check-square"></i> &nbsp;Save
                 </button>

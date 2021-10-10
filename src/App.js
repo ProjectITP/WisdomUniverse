@@ -45,6 +45,8 @@ import ViewMaterialsStudent from "./components/ViewMaterialsStudent";
 import UploadMaterial from "./components/UploadMaterial";
 import EditMaterial from "./components/EditMaterial";
 import ViewMaterialsInstructor from './components/ViewMaterialsInstructor';
+import StudentEnrollmentReport from './components/SubjectEnrollmentReport';
+
 
 import AddEnroll from './components/AddEnroll';
 import UpdateEnroll from './components/UpdateEnroll';
@@ -184,6 +186,7 @@ function App() {
           <Route path="/uploadMaterial" component={UploadMaterial}></Route>
           <Route path="/editMaterial/:id" component={EditMaterial}></Route>
           <Route path="/viewMaterialsInstructor" component={ViewMaterialsInstructor}></Route>
+          <Route path="/StudentEnrollmentReport" component={StudentEnrollmentReport}></Route>
 
 
           <Route path="/i/quiz" exact component={ViewQuiz}/>

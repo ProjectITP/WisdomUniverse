@@ -82,7 +82,7 @@ function Header() {
                                 <li><a class="dropdown-item" href="/ViewSubjectInstructor">View Subjects(Instructor)</a></li>
                                 <li><a class="dropdown-item" href="/ViewMaterialsStudent">View Materials(Student)</a></li>
                                 <li><a class="dropdown-item" href="/ViewMaterialsInstructor">View Materials(Instructor)</a></li>
-                                
+                                <li><a class="dropdown-item" href="/StudentEnrollmentReport">Enrollment Report</a></li>
                             </ul>    
                         </li>
                         <li class="nav-item dropdown">
