@@ -26,6 +26,14 @@ export default class EditSubject extends Component {
             [name]:value
         })
     }
+    
+   datePicker = () => {
+    const date = new Date();
+    const dd = String(date.getDate()).padStart(2, "0");
+    const mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
+    const yyyy = date.getFullYear();
+    return yyyy + "-" + mm + "-" + dd;
+};
 
     onSubmit = (e) =>{
         
@@ -62,7 +70,6 @@ export default class EditSubject extends Component {
         })
     }
 
-
     componentDidMount(){
         const id = this.props.match.params.id;
 
@@ -81,84 +88,83 @@ export default class EditSubject extends Component {
                 console.log(this.state.subject);
             }
         });
-    }
-
-    
+    }    
 
 
     render(){ 
         return(
-            <div class="container">
-                <div class="container"><h3 style={{marginTop:'15px'}}>Edit Subject Profile</h3></div>
-                <div class="container-fluid testbox">
-                    <form className="forms needs-validation" style={{position:'static' }} noValidate>
-                        <div className="form-group item" style={{marginBottom:'15px'}}>
-                            <p style={{marginBottom:'5px'}} >SubjectName<span class="required">*</span></p>
-                            <input type="text" className="position-item" name="subjectName" placeholder="Enter subjectName"
-                            value={this.state.subjectName} onChange={this.handleInputChange} required/>
-                
-                        </div>
+            <div class="container-fluid upload-background ">
+            <div class="container testbox">
 
-                        <div className="form-group item" style={{marginBottom:'15px'}}>
-                    <p style={{marginBottom:'5px'}}>instructorName<span class="required">*</span></p>  {/*use value atribute to set name*/}
-                    <input type="text" className="position-item" name="instructorName" placeholder="Enter instructorName"
+                <form className="forms needs-validation" style={{position:'static' }} noValidate>
+                    <h4 className="subject-h4" style={{textAlign:'center'}}>Edit Subject Profile</h4>
+
+                    <div className="form-group sitem" style={{marginBottom:'15px'}}>
+                    <p style={{marginBottom:'5px'}} >Subject Name:<span class="required">*</span></p>
+                    <input type="text" className="position-item" name="subjectName" placeholder="Enter subject Name"
+                        value={this.state.subjectName} onChange={this.handleInputChange} required/>
+                    <div style={{fontSize:12, color:"red"}}>{this.state.subjectError}</div>    
+                </div>
+
+                <div className="form-group sitem" style={{marginBottom:'15px'}}>
+                    <p style={{marginBottom:'5px'}}>Instructor Name:<span class="required">*</span></p>  {/*use value atribute to set name*/}
+                    <input type="text" className="position-item" name="instructorName" placeholder="Enter Instructor Name"
                         value={this.state.instructorName} onChange={this.handleInputChange} required/>
+                    <div style={{fontSize:12, color:"red"}}>{this.state.instructorError}</div> 
                 </div>
 
-                <div className="form-group item" style={{marginBottom:'15px'}}>
-                    <p style={{marginBottom:'5px'}}>contNumber<span class="required">*</span></p>
-                    <input type="tel" className="position-item" name="contNumber" placeholder="Enter contNumber" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                <div className="form-group sitem" style={{marginBottom:'15px'}}>
+                    <p style={{marginBottom:'5px'}}>Contact Number:<span class="required">*</span></p>
+                    <input type="tel" className="position-item" name="contNumber" placeholder="Enter Contact Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         value={this.state.contNumber} onChange={this.handleInputChange} required/>
+                    <div style={{fontSize:12, color:"red"}}>{this.state.phoneError}</div> 
                 </div>
+                
 
                 <div class="row position-item">
-                    <div class="col item"  style={{marginBottom:'15px'}}>
-                    <p style={{marginBottom:'5px'}}>startDate</p>
-                        <input type="date" className="position-item" name="startDate" placeholder="Enter startDate"
-                            value={this.state.startDate} onChange={this.handleInputChange}/>
-                        <i class="fas fa-calendar-alt"></i>&nbsp;
+                    <div class="col sitem"  style={{marginBottom:'15px'}}>
+                    <p style={{marginBottom:'5px'}}>Starting Date of the Class:</p>                      
+                        <div><input type="date" name="date" className="col-3" name="startDate" placeholder="Enter Starting Date" style={{width:'90%'}}
+                            value={this.state.startDate} onChange={this.handleInputChange} min={this.datePicker()}/>  &nbsp;<i class="far fa-calendar-alt fa-lg"></i>
+                        </div>
                     </div>
 
-                    <div class="col item"  style={{marginBottom:'15px'}}>
-                    <p style={{marginBottom:'5px'}}>duration</p>
-                        <input type="String" className="position-item" name="duration" placeholder="Enter duration" 
+                    <div class="col sitem"  style={{marginBottom:'15px'}}>
+                    <p style={{marginBottom:'5px'}}>Duration of the Class:</p>
+                        <input type="String" className="position-item" name="duration" placeholder="Enter Duration" 
                             value={this.state.duration} onChange={this.handleInputChange}/>
                     </div>
                 </div>
+                
 
                 <div class="row position-item">
-                    <div class="col item"  style={{marginBottom:'15px'}}>
-                    <p style={{marginBottom:'5px'}}>shedule</p>
-                    <input type="String" className="position-item" name="shedule" placeholder="Enter shedule"
+                    <div class="col sitem"  style={{marginBottom:'15px'}}>
+                    <p style={{marginBottom:'5px'}}>Shedule:</p>
+                    <input type="String" className="position-item" name="shedule" placeholder="Enter Shedule"
                             value={this.state.shedule} onChange={this.handleInputChange}/>
                     </div>
 
-                    <div class="col item"  style={{marginBottom:'15px'}}>
-                    <p style={{marginBottom:'5px'}}>fee</p>
-                        <input type="String" className="position-item" name="fee" placeholder="Enter fee" 
+                    <div class="col sitem"  style={{marginBottom:'15px'}}>
+                    <p style={{marginBottom:'5px'}}>Class Fee:</p>
+                        <input type="String" className="position-item" name="fee" placeholder="Enter Class Fee" 
                             value={this.state.fee} onChange={this.handleInputChange}/>
                     </div>
                 </div>
 
-                <div className="form-group item" style={{marginBottom:'15px'}}>
-                    <p style={{marginBottom:'5px'}}>aboutClass</p>
-                    <input type="String" className="position-item" name="aboutClass" placeholder="Enter aboutClass"
-                        value={this.state.aboutClass} onChange={this.handleInputChange}/>
+                <div className="form-group sitem" style={{marginBottom:'15px'}}>
+                    <p style={{marginBottom:'5px'}}>About Class:</p>
+                    <div class="container-fluid">
+                    <textarea className="position-item" name="aboutClass" value={this.state.aboutClass} onChange={this.handleInputChange} rows={5} cols={85} />
+                    </div>
                 </div>
 
-                {/*<div className="form-group item" style={{marginBottom:'15px'}}>
-                    <p>Advertisement:</p>
-                    <input type="text" name="providing"/>
-                    <input type="file" name="file" accept="file/*"/>
-                </div>*/}
+                <button className="sbutton" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
+                    <i className="far fa-check-square"></i> &nbsp;Update
+                </button>
 
-                        <button className="sbutton" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
-                            <i className="far fa-check-square"></i> &nbsp;Update
-                        </button>
-
-                    </form>
-                </div>
-            </div>  
+                </form>
+            </div>
+            </div> 
         )
     }
 

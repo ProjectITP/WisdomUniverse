@@ -3,67 +3,69 @@ import axios from 'axios';
 import '../subject-styles.css';
 
 export default class ViewSubjectStudent extends Component {
-constructor(props){
-  super(props);
+  constructor(props){
+    super(props);
 
-  this.state={
-    subjects:[]
-  };
-}
+    this.state={
+      subjects:[]
+    };
+  }
 
-componentDidMount(){
-  this.retrieveSubjects();
-}
-
-retrieveSubjects(){
-  axios.get("http://localhost:8070/subjects").then(res =>{
-    if(res.data.success){
-      this.setState({
-        subjects:res.data.existingSubjects
-      });
-
-      console.log(this.state.subjects)
-    }
-  })
-}
-
-onDelete = (id) =>{
-
-  axios.delete(`http://localhost:8070/subject/delete/${id}`).then((res) =>{
-    alert("Deleted Successfully");
+  componentDidMount(){
     this.retrieveSubjects();
-  })
-}
+  }
 
-filterData(subjects,searchKey){
-  const result = subjects.filter((subject) =>
-  subject.subjectName.toLowerCase().includes(searchKey)||
-  subject.instructorName.toLowerCase().includes(searchKey)
-  
-  )
+  retrieveSubjects(){
+    axios.get("http://localhost:8070/subjects").then(res =>{
+      if(res.data.success){
+        this.setState({
+          subjects:res.data.existingSubjects
+        });
 
-  this.setState({subjects:result})
-}
+        console.log(this.state.subjects)
+      }
+    })
+  }
 
-handleSearchArea= (e) =>{
+  onDelete = (id) =>{
 
-  const searchKey = e.currentTarget.value;
+    axios.delete(`http://localhost:8070/subject/delete/${id}`).then((res) =>{
+      alert("Deleted Successfully");
+      this.retrieveSubjects();
+    })
+  }
 
-  axios.get("http://localhost:8070/subjects").then(res =>{
-    if (res.data.success){
-      this.filterData(res.data.existingSubjects,searchKey)
-    }
-  });
+  filterData(subjects,searchKey){
+    const result = subjects.filter((subject) =>
+    subject.subjectName.toLowerCase().includes(searchKey)||
+    subject.instructorName.toLowerCase().includes(searchKey)
+    
+    )
 
-}
+    this.setState({subjects:result})
+  }
+
+  handleSearchArea= (e) =>{
+
+    const searchKey = e.currentTarget.value;
+
+    axios.get("http://localhost:8070/subjects").then(res =>{
+      if (res.data.success){
+        this.filterData(res.data.existingSubjects,searchKey)
+      }
+    });
+
+  }
 
   render() {
     return (
       <div className="container">
-          <div className="row">
-           <div className="col-lg-9 mt-2 mb-2">
-           <h1 className="subject-h1 text-uppercase font-weight-bold">All Subjects</h1>
-           <div className="col-lg-3 mt-2 mb-2">
+        &nbsp; &nbsp;
+          <div className="row subject-background" style={{height:'120px'}}>
+           <div className="col justify-content-start" style={{marginTop:'30px'}}>
+           <h1 className="text-uppercase font-weight-bold">Subjects List</h1>
+           </div>
+           <div className="col-3 justify-content-end" style={{marginTop:'40px'}}>
            <input
              className="form-control"
              type="search"
@@ -72,9 +74,9 @@ handleSearchArea= (e) =>{
              onChange={this.handleSearchArea}>               
              </input>
              </div>
-           </div>
+           
          </div>
-          <table className="table table-hover"style={{marginTop:'40px',width:'100%'}}>
+          <table className="table table-hover shover"style={{marginTop:'40px',width:'100%'}}>
               <thead className="header__item">
                   <tr >
                   <th scope="col">#</th>

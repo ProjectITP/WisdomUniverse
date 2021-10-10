@@ -41,6 +41,7 @@ router.get('/subjects',(req,res) =>{
 
 
 //get a specific subject
+
 router.get("/subject/:id",(req,res) =>{
 
     let subjectId = req.params.id;
@@ -69,7 +70,6 @@ router.put('/subject/update/:id',(req,res) => {
             if(err){
                 return res.status(400).json({error:err});
             }
-
             return res.status(200).json({
                 success:"Updated succesfully"
             });
@@ -86,7 +86,6 @@ router.delete('/subject/delete/:id',(req,res) => {
         if(err)return res.status(400).json({
             message:"Delete unsuccesful",err
         });
-
         return res.json({
             message:"Delete succesful",deletedSubject
         });

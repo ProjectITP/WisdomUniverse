@@ -1,30 +1,33 @@
 const mongoose = require('mongoose');
 
 const materialSchema = new mongoose.Schema({
-    subjectName:{
+      subjectName:{
         type:String,
-        required:true
+        required:true,
+        trim: true
+      },
+      topic: {
+        type: String,
+        required: true,
+        trim: true
+      },
+      notes: {
+        type: String,
+        required: false,
+        trim: true
+      },
+      material_path: {
+        type: String,
+        required: true
+      },
+      material_mimetype: {
+        type: String,
+        required: true
+      }
     },
-    /*curriculum:{
-        type:String,
-        required:false
-    },
-    timeTable:{
-        type:String,
-        required:false
-    },*/
-    topic:{
-        type:String,
-        required:true
-    },
-    notes:{
-        type:String,
-        required:false
-    },
-    additionalNotes:{
-        type:String,
-        required:false
+    {
+      timestamps: true
     }
-});
-
-module.exports = mongoose.model('Materials',materialSchema);
+);
+const Material = mongoose.model('Material', materialSchema);
+module.exports = Material;
