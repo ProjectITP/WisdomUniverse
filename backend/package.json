@@ -17,7 +17,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
-    "googleapis": "^88.2.0",
+    "googleapis": "^124.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.9",
     "mongoose-date-format": "^1.2.0",
